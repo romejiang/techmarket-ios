@@ -47,6 +47,8 @@
 // log
 #import <NSLog/NSLog.h>
 
+#import "TabBarViewController.h"
+
 #define NewVersionForCurrentRun @"isnewversionforcurrentrun"
 
 @interface AppDelegate () <CLLocationManagerDelegate>
@@ -143,7 +145,7 @@
     self.viewController = [[[MainViewController alloc] init] autorelease];
 #endif
     
-    
+    TabBarViewController *tabBarViewController = [[TabBarViewController alloc]init];
     // Set your app's start page by setting the <content src='foo.html' /> tag in config.xml.
     // If necessary, uncomment the line below to override it.
     // self.viewController.startPage = @"index.html";
@@ -153,7 +155,9 @@
     
     [AppDelegate isNewVersionForCurrentRun];
     
-    self.window.rootViewController = self.viewController;
+    
+    
+    self.window.rootViewController = tabBarViewController;
     [self.window makeKeyAndVisible];
     
     [[NSNotificationCenter defaultCenter]addObserver:self

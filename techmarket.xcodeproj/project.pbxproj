@@ -48,6 +48,20 @@
 		30A0434914DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434614DC770100060A13 /* Localizable.strings */; };
 		30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E5649113A7FCAF007403D8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
+		D020C30B1782C70F0094A2B8 /* tabbar_0.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C2FF1782C70F0094A2B8 /* tabbar_0.png */; };
+		D020C30C1782C70F0094A2B8 /* tabbar_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3001782C70F0094A2B8 /* tabbar_0@2x.png */; };
+		D020C30D1782C70F0094A2B8 /* tabbar_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3011782C70F0094A2B8 /* tabbar_1.png */; };
+		D020C30E1782C70F0094A2B8 /* tabbar_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3021782C70F0094A2B8 /* tabbar_1@2x.png */; };
+		D020C30F1782C70F0094A2B8 /* tabbar_3.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3031782C70F0094A2B8 /* tabbar_3.png */; };
+		D020C3101782C70F0094A2B8 /* tabbar_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3041782C70F0094A2B8 /* tabbar_3@2x.png */; };
+		D020C3111782C70F0094A2B8 /* tabbar_4.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3051782C70F0094A2B8 /* tabbar_4.png */; };
+		D020C3121782C70F0094A2B8 /* tabbar_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3061782C70F0094A2B8 /* tabbar_4@2x.png */; };
+		D020C3131782C70F0094A2B8 /* tabbar_mainbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3071782C70F0094A2B8 /* tabbar_mainbtn.png */; };
+		D020C3141782C70F0094A2B8 /* tabbar_mainbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3081782C70F0094A2B8 /* tabbar_mainbtn@2x.png */; };
+		D020C3151782C70F0094A2B8 /* tabbar_mainbtn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C3091782C70F0094A2B8 /* tabbar_mainbtn_bg.png */; };
+		D020C3161782C70F0094A2B8 /* tabbar_mainbtn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D020C30A1782C70F0094A2B8 /* tabbar_mainbtn_bg@2x.png */; };
+		D020C3201782C7AB0094A2B8 /* TabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D020C31F1782C7AB0094A2B8 /* TabbarView.m */; };
+		D020C3231782C82C0094A2B8 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D020C3221782C82C0094A2B8 /* TabBarViewController.m */; };
 		D024E7B7175465D20072F7B8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D024E7B6175465D20072F7B8 /* CoreTelephony.framework */; };
 		D03AB65B17055D6700481530 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03AB65A17055D6600481530 /* EventKit.framework */; };
 		D03AB65C170561E000481530 /* libNSLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF88B8D17055714002B6A43 /* libNSLog.a */; };
@@ -83,14 +97,14 @@
 		};
 		301BF534109A57CC0062928A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 301BF52D109A57CC0062928A /* ../../../CordovaLib/CordovaLib.xcodeproj */;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = CordovaLib;
 		};
 		301BF550109A68C00062928A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 301BF52D109A57CC0062928A /* ../../../CordovaLib/CordovaLib.xcodeproj */;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CordovaLib;
@@ -155,7 +169,7 @@
 		1F766FE013BBADB100FB74C0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		301BF52D109A57CC0062928A /* ../../../CordovaLib/CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = "CordovaLib/CordovaLib.xcodeproj"; sourceTree = "<group>"; };
+		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
 		301BF5B4109A6A2B0062928A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		301BF5B6109A6A2B0062928A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -180,6 +194,22 @@
 		32CA4F630368D1EE00C91783 /* techmarket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "techmarket-Prefix.pch"; sourceTree = "<group>"; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* techmarket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "techmarket-Info.plist"; path = "../techmarket-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		D020C2FF1782C70F0094A2B8 /* tabbar_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_0.png; sourceTree = "<group>"; };
+		D020C3001782C70F0094A2B8 /* tabbar_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_0@2x.png"; sourceTree = "<group>"; };
+		D020C3011782C70F0094A2B8 /* tabbar_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_1.png; sourceTree = "<group>"; };
+		D020C3021782C70F0094A2B8 /* tabbar_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_1@2x.png"; sourceTree = "<group>"; };
+		D020C3031782C70F0094A2B8 /* tabbar_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_3.png; sourceTree = "<group>"; };
+		D020C3041782C70F0094A2B8 /* tabbar_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_3@2x.png"; sourceTree = "<group>"; };
+		D020C3051782C70F0094A2B8 /* tabbar_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_4.png; sourceTree = "<group>"; };
+		D020C3061782C70F0094A2B8 /* tabbar_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_4@2x.png"; sourceTree = "<group>"; };
+		D020C3071782C70F0094A2B8 /* tabbar_mainbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_mainbtn.png; sourceTree = "<group>"; };
+		D020C3081782C70F0094A2B8 /* tabbar_mainbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mainbtn@2x.png"; sourceTree = "<group>"; };
+		D020C3091782C70F0094A2B8 /* tabbar_mainbtn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_mainbtn_bg.png; sourceTree = "<group>"; };
+		D020C30A1782C70F0094A2B8 /* tabbar_mainbtn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mainbtn_bg@2x.png"; sourceTree = "<group>"; };
+		D020C31E1782C7AB0094A2B8 /* TabbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarView.h; sourceTree = "<group>"; };
+		D020C31F1782C7AB0094A2B8 /* TabbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarView.m; sourceTree = "<group>"; };
+		D020C3211782C82C0094A2B8 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		D020C3221782C82C0094A2B8 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		D024E7B6175465D20072F7B8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D03AB65A17055D6600481530 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		D03EC659175609A600870E2A /* ApplicationInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ApplicationInfo.xcodeproj; path = ApplicationInfo/ApplicationInfo.xcodeproj; sourceTree = "<group>"; };
@@ -341,6 +371,7 @@
 		0FF88B9617056776002B6A43 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D020C31D1782C7AB0094A2B8 /* Tabbar */,
 				0FF88B9717056776002B6A43 /* Help */,
 				0FF88B9B17056776002B6A43 /* Load */,
 			);
@@ -406,7 +437,7 @@
 			children = (
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
-				301BF52D109A57CC0062928A /* ../../../CordovaLib/CordovaLib.xcodeproj */,
+				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
 				0FF88B301705565C002B6A43 /* Libs */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				307C750510C5A3420062BCA9 /* Plugins */,
@@ -431,6 +462,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D020C2FE1782C70F0094A2B8 /* tabbar */,
 				D0B7CF561762D1E400D0DF3A /* icons */,
 				0FF88BAA170569C5002B6A43 /* help */,
 				30A0434214DC770100060A13 /* de.lproj */,
@@ -516,6 +548,36 @@
 				30A0434614DC770100060A13 /* Localizable.strings */,
 			);
 			path = se.lproj;
+			sourceTree = "<group>";
+		};
+		D020C2FE1782C70F0094A2B8 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				D020C2FF1782C70F0094A2B8 /* tabbar_0.png */,
+				D020C3001782C70F0094A2B8 /* tabbar_0@2x.png */,
+				D020C3011782C70F0094A2B8 /* tabbar_1.png */,
+				D020C3021782C70F0094A2B8 /* tabbar_1@2x.png */,
+				D020C3031782C70F0094A2B8 /* tabbar_3.png */,
+				D020C3041782C70F0094A2B8 /* tabbar_3@2x.png */,
+				D020C3051782C70F0094A2B8 /* tabbar_4.png */,
+				D020C3061782C70F0094A2B8 /* tabbar_4@2x.png */,
+				D020C3071782C70F0094A2B8 /* tabbar_mainbtn.png */,
+				D020C3081782C70F0094A2B8 /* tabbar_mainbtn@2x.png */,
+				D020C3091782C70F0094A2B8 /* tabbar_mainbtn_bg.png */,
+				D020C30A1782C70F0094A2B8 /* tabbar_mainbtn_bg@2x.png */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		D020C31D1782C7AB0094A2B8 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				D020C31E1782C7AB0094A2B8 /* TabbarView.h */,
+				D020C31F1782C7AB0094A2B8 /* TabbarView.m */,
+				D020C3211782C82C0094A2B8 /* TabBarViewController.h */,
+				D020C3221782C82C0094A2B8 /* TabBarViewController.m */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		D03EC65A175609A600870E2A /* Products */ = {
@@ -673,16 +735,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 301BF52E109A57CC0062928A /* Products */;
-					ProjectRef = 301BF52D109A57CC0062928A /* ../../../CordovaLib/CordovaLib.xcodeproj */;
-				},
-				{
 					ProductGroup = D03EC65A175609A600870E2A /* Products */;
 					ProjectRef = D03EC659175609A600870E2A /* ApplicationInfo.xcodeproj */;
 				},
 				{
 					ProductGroup = D0A4F1C2177A8E6300D1A742 /* Products */;
 					ProjectRef = D0A4F1C1177A8E6300D1A742 /* ApplicationUnity.xcodeproj */;
+				},
+				{
+					ProductGroup = 301BF52E109A57CC0062928A /* Products */;
+					ProjectRef = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
 				},
 				{
 					ProductGroup = 0FF88B8917055713002B6A43 /* Products */;
@@ -772,6 +834,18 @@
 				D0B7CF8D1763223500D0DF3A /* UMSnsAccountViewController.xib in Resources */,
 				D0B7CF8E1763223500D0DF3A /* UMSShareListController.xib in Resources */,
 				D0B7CF8F1763223500D0DF3A /* UMSocialSDKResources.bundle in Resources */,
+				D020C30B1782C70F0094A2B8 /* tabbar_0.png in Resources */,
+				D020C30C1782C70F0094A2B8 /* tabbar_0@2x.png in Resources */,
+				D020C30D1782C70F0094A2B8 /* tabbar_1.png in Resources */,
+				D020C30E1782C70F0094A2B8 /* tabbar_1@2x.png in Resources */,
+				D020C30F1782C70F0094A2B8 /* tabbar_3.png in Resources */,
+				D020C3101782C70F0094A2B8 /* tabbar_3@2x.png in Resources */,
+				D020C3111782C70F0094A2B8 /* tabbar_4.png in Resources */,
+				D020C3121782C70F0094A2B8 /* tabbar_4@2x.png in Resources */,
+				D020C3131782C70F0094A2B8 /* tabbar_mainbtn.png in Resources */,
+				D020C3141782C70F0094A2B8 /* tabbar_mainbtn@2x.png in Resources */,
+				D020C3151782C70F0094A2B8 /* tabbar_mainbtn_bg.png in Resources */,
+				D020C3161782C70F0094A2B8 /* tabbar_mainbtn_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,6 +881,8 @@
 				0FF88BA117056776002B6A43 /* WPLoadView.m in Sources */,
 				0FF88BA8170567A7002B6A43 /* MainViewController.m in Sources */,
 				0F229ABE1712985A005A670E /* NSString+FileFormat.m in Sources */,
+				D020C3201782C7AB0094A2B8 /* TabbarView.m in Sources */,
+				D020C3231782C82C0094A2B8 /* TabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
