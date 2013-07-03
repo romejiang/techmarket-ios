@@ -49,7 +49,7 @@
     [UIApplication sharedApplication].statusBarHidden = NO;
 
 //     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
-
+    [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
 }
 
 - (void)viewDidLoad
@@ -86,12 +86,7 @@
       
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-//    return NO;
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
