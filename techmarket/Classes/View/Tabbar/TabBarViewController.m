@@ -8,16 +8,27 @@
 
 
 #define kTabBarHeight								60
+
+#include <QuartzCore/QuartzCore.h>
+#import <Cordova/CDVViewController.h>
+#import <NSLog/NSLog.h>
+
+#import "NSBundle+Image.h"
 #import "TabBarViewController.h"
 #import "TabbarView.h"
-#import <Cordova/CDVViewController.h>
+#import "WPHelpView.h"
 
-@interface TabBarViewController ()<tabbarDelegate>
+@interface TabBarViewController ()<tabbarDelegate,WPHelpViewDelegate>
 
-@property(strong,nonatomic)TabbarView *  tabBarView;
-@property (strong,nonatomic)NSArray *    arrayViewController;
-@property (strong,nonatomic)CDVViewController *firstViewController;
-@property (strong, nonatomic)CDVViewController *secondViewController;
+
+@property (strong, nonatomic)WPHelpView*        helpView;
+@property (strong, nonatomic)TabbarView *       tabBarView;
+@property (strong, nonatomic)NSArray *          arrayViewController;
+@property (strong, nonatomic)CDVViewController* firstViewController;
+@property (strong, nonatomic)CDVViewController* secondViewController;
+@property (strong, nonatomic)CDVViewController* thirdViewController;
+@property (strong, nonatomic)CDVViewController* FourViewController;
+@property (strong, nonatomic)CDVViewController* FiveViewController;
 
 //解决下移问题(存放CDv)
 @property (strong,nonatomic)UIView*      customView;
@@ -37,7 +48,12 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(_pageDidLoadFinish)
+                                                     name:CDVPageDidLoadFinishNotification
+                                                   object:nil];
         // Custom initialization
     }
     return self;
@@ -46,9 +62,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [UIApplication sharedApplication].statusBarHidden = NO;
 
-//     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
 }
 
@@ -62,6 +76,13 @@
     [self.view addSubview:_customView];
         
     //tabBarView init
+    
+    [self _showHelpView];
+    
+    [self debugStart];
+    
+    [UIApplication sharedApplication].statusBarHidden = NO;
+    
     _tabBarView = [[TabbarView alloc]init];
         
     _tabBarView.delegate = self;
@@ -70,20 +91,19 @@
     
     [self getViewControllers];
     
-    for (UIViewController * viewController in _arrayViewController)
+    for (CDVViewController * viewController in _arrayViewController)
     {
         [_customView insertSubview:viewController.view belowSubview:_tabBarView];
+        viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
+        
     }
     
     [self touchBtnAtIndex:0];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-      
 }
 
 
@@ -116,17 +136,20 @@
    
     _customView.frame = CGRectMake(0, 0, width, height);
     
-    _tabBarView.frame = CGRectMake(0, height-20 -kTabBarHeight, width, kTabBarHeight);
+    _tabBarView.frame = CGRectMake(0, height-statusBarHeight -kTabBarHeight, width, kTabBarHeight);
     
     for (UIViewController *viewConroller in _arrayViewController)
     {
-        viewConroller.view.frame = CGRectMake(0, 0, width, height-kTabBarHeight-20);
+        viewConroller.view.frame = CGRectMake(0, 0, width, height-kTabBarHeight-statusBarHeight+9);
         
         NSLog(@"viewConroller.view.frame.origin.y = %1.2f",viewConroller.view.frame.origin.y);
-    
     }
-    
+}
 
+
+- (NSUInteger)supportedInterfaceOrientations
+{    
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 /**************************************************************************************/
@@ -139,6 +162,8 @@
 
 -(void)touchBtnAtIndex:(NSInteger)index
 {
+    
+    NSLog(@"%1.2d",index);
     //根据用户点击tabbar控制View显示和隐藏
     for (UIViewController *viewController in _arrayViewController)
     {
@@ -153,7 +178,36 @@
 /**************************************************************************************/
 
 #pragma mark -
-#pragma mark 私有 初始化Controller
+#pragma mark WPHelpViewDelegate
+#pragma mark -
+
+/**************************************************************************************/
+
+/* 帮助看完了 */
+- (void) helpFinished:(WPHelpView *)helpView
+{
+    [self _hiddenHelpView];
+    
+    [WPHelpView markHelped:YES];
+}
+
+
+/**************************************************************************************/
+
+#pragma mark -
+#pragma mark CDVPageDidLoadFinishNotification
+#pragma mark -
+
+/**************************************************************************************/
+
+- (void) _pageDidLoadFinish
+{
+    [UIApplication sharedApplication].statusBarHidden = NO;
+}
+/**************************************************************************************/
+
+#pragma mark -
+#pragma mark 私有 
 #pragma mark -
 
 /**************************************************************************************/
@@ -161,19 +215,99 @@
 -(void)getViewControllers
 {
     _firstViewController = [CDVViewController new];
-    _firstViewController.wwwFolderName = @"www";
-    _firstViewController.startPage = @"spec.html";
-    _firstViewController.useSplashScreen = NO;
-//    _firstViewController.view.frame = CGRectMake(0, 0, 320, 480);
+    _firstViewController.wwwFolderName = @"qj";
+    _firstViewController.startPage = @"index.html";
+    _firstViewController.useSplashScreen =YES;
+
     
     _secondViewController = [CDVViewController new];
-    _secondViewController.wwwFolderName = @"www";
+    _secondViewController.wwwFolderName = @"qj";
     _secondViewController.startPage = @"index.html";
     _secondViewController.useSplashScreen = NO;
-//    _secondViewController.view.frame = CGRectMake(0, 0, 320, 480);
+
     
-    _arrayViewController = [NSArray arrayWithObjects:_firstViewController,_secondViewController,_firstViewController,_secondViewController, nil];
+    
+    _thirdViewController = [CDVViewController new];
+    _thirdViewController.wwwFolderName = @"mec";
+    _thirdViewController.startPage = @"index.html";
+    _thirdViewController.useSplashScreen = NO;
+
+    _FourViewController = [CDVViewController new];
+    _FourViewController.wwwFolderName = @"va";
+    _FourViewController.startPage = @"index.html";
+    _FourViewController.useSplashScreen = NO;
+
+     _FiveViewController = [CDVViewController new];
+      _FiveViewController.wwwFolderName = @"yu";
+      _FiveViewController.startPage =@"index.html";
+      _FiveViewController.useSplashScreen = NO;
+    
+    _arrayViewController = [NSArray arrayWithObjects:_firstViewController,_secondViewController,_thirdViewController,_FourViewController,_FiveViewController, nil];
     
 }
+
+/* 
+ 显示帮助
+ */
+- (void) _showHelpView
+{
+    // 看过帮助
+    if (YES == [WPHelpView helped])
+        return ;
+    
+    // 未启用该插件
+    NSArray *imageFils = [[NSBundle mainBundle] picturesWithDirectoryName:@"help"];
+    
+    
+    if ([imageFils count] == 0)
+    {
+        NSInfo(@"没有帮助图片");
+        return;
+    }
+    
+    NSInfo(@"显示帮助信息开始");
+    
+    if (nil == _helpView)
+    {
+        _helpView = [[[NSBundle mainBundle] loadNibNamed:@"WPHelpView"
+                                                   owner:nil
+                                                 options:nil] lastObject];
+        
+        _helpView.delegate = self;
+        
+        [self.view insertSubview:_helpView
+                    aboveSubview:self.view];
+        
+    }
+    
+    _helpView.hidden = NO;
+}
+
+/* 
+ 隐藏帮助 
+ */
+- (void) _hiddenHelpView
+{
+    if (nil == _helpView)
+        return;
+    
+    // - acimation
+    CATransition            *transitionC        =   [CATransition animation];
+    
+    transitionC.duration                        =   0.5f;
+    
+    transitionC.timingFunction                  =   [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    transitionC.type                            =   kCATransitionFade;
+    
+    transitionC.subtype                         =   kCATransitionFromRight;
+    
+    [_helpView.layer addAnimation:transitionC
+                           forKey:nil];
+    _helpView.hidden = YES;
+    
+    NSInfo(@"显示帮助信息结束");
+}
+
 
 @end

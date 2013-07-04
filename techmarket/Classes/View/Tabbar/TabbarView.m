@@ -128,14 +128,20 @@
             [self.delegate touchBtnAtIndex:1];
             break;
         }
+        case 2:
+        {
+            [_tabbarView setImage:[UIImage imageNamed:@"tabbar_0"]];
+            [self.delegate touchBtnAtIndex:2];
+            break;
+        }
         case 3:
             [_tabbarView setImage:[UIImage imageNamed:@"tabbar_3"]];
-            [self.delegate touchBtnAtIndex:2];
+            [self.delegate touchBtnAtIndex:3];
             break;
         case 4:
             [_tabbarView setImage:[UIImage imageNamed:@"tabbar_4"]];
             
-            [self.delegate touchBtnAtIndex:3];
+            [self.delegate touchBtnAtIndex:4];
             break;
         default:
             break;

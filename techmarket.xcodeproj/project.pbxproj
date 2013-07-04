@@ -67,6 +67,10 @@
 		D03AB65C170561E000481530 /* libNSLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF88B8D17055714002B6A43 /* libNSLog.a */; };
 		D08B438E17128CCC00DD791B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08B438D17128CCC00DD791B /* StoreKit.framework */; };
 		D0A4F1D5177A8ED500D1A742 /* libApplicationUnity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A4F1C6177A8E6300D1A742 /* libApplicationUnity.a */; };
+		D0A967E51785568D0002C21B /* mec in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E41785568D0002C21B /* mec */; };
+		D0A967E7178556940002C21B /* qj in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E6178556940002C21B /* qj */; };
+		D0A967E91785569A0002C21B /* va in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E81785569A0002C21B /* va */; };
+		D0A967FB178561FC0002C21B /* yu in Resources */ = {isa = PBXBuildFile; fileRef = D0A967FA178561FC0002C21B /* yu */; };
 		D0B7CF5B1762D1E400D0DF3A /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF571762D1E400D0DF3A /* icon-72.png */; };
 		D0B7CF5C1762D1E400D0DF3A /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF581762D1E400D0DF3A /* icon-72@2x.png */; };
 		D0B7CF5D1762D1E400D0DF3A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF591762D1E400D0DF3A /* icon.png */; };
@@ -216,6 +220,10 @@
 		D03EC66017560AB000870E2A /* OpenUDID.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OpenUDID.xcodeproj; path = OpenUDID/OpenUDID.xcodeproj; sourceTree = "<group>"; };
 		D08B438D17128CCC00DD791B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D0A4F1C1177A8E6300D1A742 /* ApplicationUnity.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ApplicationUnity.xcodeproj; path = ApplicationUnity/ApplicationUnity.xcodeproj; sourceTree = "<group>"; };
+		D0A967E41785568D0002C21B /* mec */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mec; sourceTree = "<group>"; };
+		D0A967E6178556940002C21B /* qj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = qj; sourceTree = "<group>"; };
+		D0A967E81785569A0002C21B /* va */ = {isa = PBXFileReference; lastKnownFileType = folder; path = va; sourceTree = "<group>"; };
+		D0A967FA178561FC0002C21B /* yu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = yu; sourceTree = "<group>"; };
 		D0B7CF571762D1E400D0DF3A /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
 		D0B7CF581762D1E400D0DF3A /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
 		D0B7CF591762D1E400D0DF3A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -435,8 +443,12 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D0A967FA178561FC0002C21B /* yu */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
+				D0A967E41785568D0002C21B /* mec */,
+				D0A967E6178556940002C21B /* qj */,
+				D0A967E81785569A0002C21B /* va */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
 				0FF88B301705565C002B6A43 /* Libs */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -846,6 +858,10 @@
 				D020C3141782C70F0094A2B8 /* tabbar_mainbtn@2x.png in Resources */,
 				D020C3151782C70F0094A2B8 /* tabbar_mainbtn_bg.png in Resources */,
 				D020C3161782C70F0094A2B8 /* tabbar_mainbtn_bg@2x.png in Resources */,
+				D0A967E51785568D0002C21B /* mec in Resources */,
+				D0A967E7178556940002C21B /* qj in Resources */,
+				D0A967E91785569A0002C21B /* va in Resources */,
+				D0A967FB178561FC0002C21B /* yu in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
