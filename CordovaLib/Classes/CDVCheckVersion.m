@@ -10,9 +10,10 @@
 #import <NSLog/NSLog.h>
 #import <QuartzCore/QuartzCore.h>
 #import <ApplicationUnity/ASIHTTPRequest.h>
+#import  <ApplicationUnity/ActivityIndicatorView.h>
 
-#define CustomActivity_IndicatorViewFrame  CGRectMake(110, 120, 100, 100)
-#define CustomActivity_ActivityIndicatorFrame CGRectMake(31, 32, 37, 37)
+
+#define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
 #define KCDVUpdateVersion_TrackViewUrl      @"trackViewUrl"
 #define KCDVUpdateVersion_Result            @"results"
@@ -27,10 +28,8 @@ UIAlertViewDelegate>
     NSString*   _trackViewUrl;
 }
 
-@property (strong, nonatomic) UIView *viewActivityIndicatorView;
-@property (strong, nonatomic) UIActivityIndicatorView *largeActivity;
+@property (strong, nonatomic) ActivityIndicatorView *viewActivityIndicatorView;
 @property (strong, nonatomic) ASIHTTPRequest *asiHttpRequest;
-
 
 @end
 
@@ -48,23 +47,15 @@ UIAlertViewDelegate>
 -(void)pluginInitialize
 {
     //自定制缓冲等待
-    self.viewActivityIndicatorView  = [[UIView alloc]initWithFrame:CustomActivity_IndicatorViewFrame];
-    [self.viewActivityIndicatorView setBackgroundColor:[UIColor blackColor]];
-    [self.viewActivityIndicatorView setAlpha:0.5];
-    self.viewActivityIndicatorView.layer.cornerRadius = 10;
-    [self.viewController.view addSubview:self.viewActivityIndicatorView];
-    self.largeActivity = [[UIActivityIndicatorView alloc]initWithFrame:CustomActivity_ActivityIndicatorFrame];
-    self.largeActivity.activityIndicatorViewStyle= UIActivityIndicatorViewStyleWhiteLarge;
-    [self.viewActivityIndicatorView addSubview:self.largeActivity];
-    self.viewActivityIndicatorView.hidden = YES;
-    
+    _viewActivityIndicatorView = [[ActivityIndicatorView alloc]initWithFrame:CustomActivity_IndicatorViewFrame];
+    [_viewActivityIndicatorView setLabelTextWithContent:@"正在检查更新..."];
+    [self.viewController.view addSubview:_viewActivityIndicatorView];
 }
 -(void)checkVersion:(CDVInvokedUrlCommand*)command
 {
     
-    self.viewActivityIndicatorView.hidden = NO;
-    [self.largeActivity startAnimating];
-    
+    [_viewActivityIndicatorView startAnimation];
+
     NSInfo(@"检测版本开始");
     
     NSString *itunesItemIdentifier = [command.arguments count] > 0?[command.arguments objectAtIndex:0]:  nil;
@@ -80,9 +71,8 @@ UIAlertViewDelegate>
         [self _showAlertViewWithTitle:@"版本更新"
                           withMessage:@"连接商店信息错误"
                  withCancelButtonInfo:@"忽略"];
-        
-        self.viewActivityIndicatorView.hidden = YES;
-        [self.largeActivity stopAnimating];
+    
+        [_viewActivityIndicatorView stopAnimation];
         
         return;
     }
@@ -146,8 +136,8 @@ UIAlertViewDelegate>
                                             
                                             
                                         }
-                                        self.viewActivityIndicatorView.hidden = YES;
-                                        [self.largeActivity stopAnimating];
+                                        
+                                        [_viewActivityIndicatorView stopAnimation];
                                     }];
 }
 

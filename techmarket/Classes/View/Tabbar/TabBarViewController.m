@@ -9,7 +9,7 @@
 
 #define kTabBarHeight								60
 
-#include <QuartzCore/QuartzCore.h>
+#import <QuartzCore/QuartzCore.h>
 #import <Cordova/CDVViewController.h>
 #import <NSLog/NSLog.h>
 #include <ApplicationUnity/ActivityIndicatorView.h>
@@ -67,7 +67,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-
+    
     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
 }
 
@@ -79,8 +79,7 @@
     _customView = [[UIView alloc]init];
     
     [self.view addSubview:_customView];
-        
-    //tabBarView init
+    
     
     [self _showHelpView];
     
@@ -88,8 +87,9 @@
     
     [UIApplication sharedApplication].statusBarHidden = NO;
     
+    //tabBarView init
     _tabBarView = [[TabbarView alloc]init];
-        
+    
     _tabBarView.delegate = self;
     
     [_customView addSubview:_tabBarView];
@@ -102,16 +102,13 @@
         viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
         
     }
-    
     [self touchBtnAtIndex:0];
-
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-
 
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -124,22 +121,22 @@
     
     CGSize sizeDevice = [UIScreen mainScreen].bounds.size;
     
-//    //横屏判断
-//    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation))
-//    {
-        width = sizeDevice.width;
-        
-        height = sizeDevice.height;
-//    }
-//    else if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation))
-//    {
-//       width = sizeDevice.height;
-//       
-//       height = sizeDevice.width;
-//    }
-
+    //    //横屏判断
+    //    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation))
+    //    {
+    width = sizeDevice.width;
+    
+    height = sizeDevice.height;
+    //    }
+    //    else if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation))
+    //    {
+    //       width = sizeDevice.height;
+    //
+    //       height = sizeDevice.width;
+    //    }
+    
     CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-   
+    
     _customView.frame = CGRectMake(0, 0, width, height);
     
     _tabBarView.frame = CGRectMake(0, height-statusBarHeight -kTabBarHeight, width, kTabBarHeight);
@@ -154,7 +151,7 @@
 
 
 - (NSUInteger)supportedInterfaceOrientations
-{    
+{
     return UIInterfaceOrientationMaskPortrait;
 }
 
@@ -168,7 +165,6 @@
 
 -(void)touchBtnAtIndex:(NSInteger)index
 {
-    NSLog(@"%1.2d",index);
     //根据用户点击tabbar控制View显示和隐藏
     for (UIViewController *viewController in _arrayViewController)
     {
@@ -196,7 +192,6 @@
     [WPHelpView markHelped:YES];
 }
 
-
 /**************************************************************************************/
 
 #pragma mark -
@@ -212,7 +207,7 @@
 /**************************************************************************************/
 
 #pragma mark -
-#pragma mark 私有 
+#pragma mark 私有
 #pragma mark -
 
 /**************************************************************************************/
@@ -220,38 +215,30 @@
 -(void)getViewControllers
 {
     _firstViewController = [CDVViewController new];
-    _firstViewController.wwwFolderName = @"qj";
+    _firstViewController.wwwFolderName = @"www";
     _firstViewController.startPage = @"index.html";
-//    _firstViewController.useSplashScreen =YES;
-
     
     _secondViewController = [CDVViewController new];
     _secondViewController.wwwFolderName = @"qj";
     _secondViewController.startPage = @"index.html";
-//    _secondViewController.useSplashScreen = NO;
-
-    
     
     _thirdViewController = [CDVViewController new];
     _thirdViewController.wwwFolderName = @"mec";
     _thirdViewController.startPage = @"index.html";
-//    _thirdViewController.useSplashScreen = NO;
-
+    
     _FourViewController = [CDVViewController new];
     _FourViewController.wwwFolderName = @"va";
     _FourViewController.startPage = @"index.html";
-//    _FourViewController.useSplashScreen = NO;
-
-     _FiveViewController = [CDVViewController new];
-      _FiveViewController.wwwFolderName = @"yu";
-      _FiveViewController.startPage =@"index.html";
-//      _FiveViewController.useSplashScreen = NO;
+    
+    _FiveViewController = [CDVViewController new];
+    _FiveViewController.wwwFolderName = @"yu";
+    _FiveViewController.startPage =@"index.html";
     
     _arrayViewController = [NSArray arrayWithObjects:_firstViewController,_secondViewController,_thirdViewController,_FourViewController,_FiveViewController, nil];
     
 }
 
-/* 
+/*
  显示帮助
  */
 - (void) _showHelpView
@@ -288,8 +275,8 @@
     _helpView.hidden = NO;
 }
 
-/* 
- 隐藏帮助 
+/*
+ 隐藏帮助
  */
 - (void) _hiddenHelpView
 {

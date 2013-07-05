@@ -14,6 +14,7 @@
 @interface ActivityIndicatorView ()
 
 @property (strong, nonatomic) UIActivityIndicatorView *largeActivity;
+@property (strong, nonatomic) UILabel                 *label;
 
 @end
 
@@ -35,35 +36,37 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        //view
+        [self setBackgroundColor:[UIColor blackColor]];
+        [self setAlpha:0.5];
+        self.layer.cornerRadius = 10;
+        
+        //缓冲
+        CGFloat largeActivityOriginX = (self.frame.size.width - CustomActivity_ActivityIndicatorFrame.size.width)/2;
+        _largeActivity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(largeActivityOriginX, CustomActivity_ActivityIndicatorFrame.origin.y, CustomActivity_ActivityIndicatorFrame.size.width, CustomActivity_ActivityIndicatorFrame.size.height)];
+        _largeActivity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+        [self addSubview:_largeActivity];
+        
+        
+        //label
+        _label = [[UILabel alloc]initWithFrame:CGRectMake(0, 46, self.frame.size.width, 30)];
+        _label.hidden = NO;
+        [_label setBackgroundColor:[UIColor clearColor]];
+        _label.text = @"";
+        _label.font = [UIFont systemFontOfSize:12];
+        _label.textColor = [UIColor whiteColor];
+        _label.textAlignment = UITextAlignmentCenter;
+        [self addSubview:_label];
+        
+        self.hidden = YES;
+        [_largeActivity stopAnimating];
     }
     return self;
 }
 
 -(void)setLabelTextWithContent:(NSString*)labelText
 {
-    
-    //view
-    [self setBackgroundColor:[UIColor blackColor]];
-    [self setAlpha:0.5];
-    self.layer.cornerRadius = 10;
-    
-    //缓冲
-    CGFloat largeActivityOriginX = (self.frame.size.width - CustomActivity_ActivityIndicatorFrame.size.width)/2;
-    _largeActivity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(largeActivityOriginX, CustomActivity_ActivityIndicatorFrame.origin.y, CustomActivity_ActivityIndicatorFrame.size.width, CustomActivity_ActivityIndicatorFrame.size.height)];
-    _largeActivity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    [self addSubview:_largeActivity];
-    
-    
-    //label
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 46, self.frame.size.width, 30)];
-    label.hidden = NO;
-    [label setBackgroundColor:[UIColor clearColor]];
-    label.text = labelText;
-    label.font = [UIFont systemFontOfSize:12];
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = UITextAlignmentCenter;
-    [self addSubview:label];
-  
+    _label.text =labelText;
 }
 
 /***********************************************************************************/
