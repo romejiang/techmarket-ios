@@ -10,4 +10,8 @@
 
 @interface ActivityIndicatorView : UIView
 
+-(void)stopAnimation;
+-(void)startAnimation;
+-(void)setLabelTextWithContent:(NSString*)labelText;
+
 @end

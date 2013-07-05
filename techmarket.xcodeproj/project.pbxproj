@@ -1026,7 +1026,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 					$BUILT_PRODUCTS_DIR/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
@@ -1068,7 +1068,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 					$BUILT_PRODUCTS_DIR/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,

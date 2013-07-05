@@ -12,11 +12,14 @@
 #include <QuartzCore/QuartzCore.h>
 #import <Cordova/CDVViewController.h>
 #import <NSLog/NSLog.h>
+#include <ApplicationUnity/ActivityIndicatorView.h>
 
 #import "NSBundle+Image.h"
 #import "TabBarViewController.h"
 #import "TabbarView.h"
 #import "WPHelpView.h"
+
+#define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
 @interface TabBarViewController ()<tabbarDelegate,WPHelpViewDelegate>
 
@@ -29,6 +32,8 @@
 @property (strong, nonatomic)CDVViewController* thirdViewController;
 @property (strong, nonatomic)CDVViewController* FourViewController;
 @property (strong, nonatomic)CDVViewController* FiveViewController;
+
+@property (strong, nonatomic)ActivityIndicatorView * activityIndicatorView;
 
 //解决下移问题(存放CDv)
 @property (strong,nonatomic)UIView*      customView;
@@ -99,6 +104,7 @@
     }
     
     [self touchBtnAtIndex:0];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -162,7 +168,6 @@
 
 -(void)touchBtnAtIndex:(NSInteger)index
 {
-    
     NSLog(@"%1.2d",index);
     //根据用户点击tabbar控制View显示和隐藏
     for (UIViewController *viewController in _arrayViewController)
@@ -217,30 +222,30 @@
     _firstViewController = [CDVViewController new];
     _firstViewController.wwwFolderName = @"qj";
     _firstViewController.startPage = @"index.html";
-    _firstViewController.useSplashScreen =YES;
+//    _firstViewController.useSplashScreen =YES;
 
     
     _secondViewController = [CDVViewController new];
     _secondViewController.wwwFolderName = @"qj";
     _secondViewController.startPage = @"index.html";
-    _secondViewController.useSplashScreen = NO;
+//    _secondViewController.useSplashScreen = NO;
 
     
     
     _thirdViewController = [CDVViewController new];
     _thirdViewController.wwwFolderName = @"mec";
     _thirdViewController.startPage = @"index.html";
-    _thirdViewController.useSplashScreen = NO;
+//    _thirdViewController.useSplashScreen = NO;
 
     _FourViewController = [CDVViewController new];
     _FourViewController.wwwFolderName = @"va";
     _FourViewController.startPage = @"index.html";
-    _FourViewController.useSplashScreen = NO;
+//    _FourViewController.useSplashScreen = NO;
 
      _FiveViewController = [CDVViewController new];
       _FiveViewController.wwwFolderName = @"yu";
       _FiveViewController.startPage =@"index.html";
-      _FiveViewController.useSplashScreen = NO;
+//      _FiveViewController.useSplashScreen = NO;
     
     _arrayViewController = [NSArray arrayWithObjects:_firstViewController,_secondViewController,_thirdViewController,_FourViewController,_FiveViewController, nil];
     

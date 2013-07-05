@@ -28,7 +28,6 @@
 #import "MainViewController.h"
 
 #include <QuartzCore/QuartzCore.h>
-
 #import <NSLog/NSLog.h>
 #import <Cordova/CDVSplashScreen.h>
 
@@ -36,6 +35,8 @@
 #import "WPHelpView.h"
 #import "AppDelegate.h"
 #import "NSBundle+Image.h"
+
+
 
 
 @interface MainViewController () <WPHelpViewDelegate>
@@ -106,6 +107,8 @@
     [self _setup];
     
     [UIApplication sharedApplication].statusBarHidden = NO;
+    
+
     
     NSLog(@"");
     
