@@ -16,6 +16,7 @@
 @property (strong, nonatomic) UIActivityIndicatorView *largeActivity;
 @property (strong, nonatomic) UILabel                 *label;
 
+
 @end
 
 

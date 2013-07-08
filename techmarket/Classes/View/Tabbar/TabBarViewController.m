@@ -18,6 +18,7 @@
 #import "TabBarViewController.h"
 #import "TabbarView.h"
 #import "WPHelpView.h"
+#import "WPSplashView.h"
 
 #define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
@@ -75,34 +76,36 @@
 {
     [super viewDidLoad];
     
+    [UIApplication sharedApplication].statusBarHidden = NO;
+    
     //customView init
     _customView = [[UIView alloc]init];
     
     [self.view addSubview:_customView];
     
-    
-    [self _showHelpView];
-    
-    [self debugStart];
-    
-    [UIApplication sharedApplication].statusBarHidden = NO;
-    
-    //tabBarView init
-    _tabBarView = [[TabbarView alloc]init];
-    
-    _tabBarView.delegate = self;
-    
-    [_customView addSubview:_tabBarView];
-    
-    [self getViewControllers];
-    
-    for (CDVViewController * viewController in _arrayViewController)
-    {
-        [_customView insertSubview:viewController.view belowSubview:_tabBarView];
-        viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
-        
-    }
-    [self touchBtnAtIndex:0];
+    [self showSplashView];
+//    
+//    [self _showHelpView];
+//    
+//    [self debugStart];
+//    
+//    
+//    //tabBarView init
+//    _tabBarView = [[TabbarView alloc]init];
+//    
+//    _tabBarView.delegate = self;
+//    
+//    [_customView addSubview:_tabBarView];
+//    
+//    [self getViewControllers];
+//    
+//    for (CDVViewController * viewController in _arrayViewController)
+//    {
+//        [_customView insertSubview:viewController.view belowSubview:_tabBarView];
+//        viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
+//        
+//    }
+//    [self touchBtnAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -300,6 +303,20 @@
     
     NSInfo(@"显示帮助信息结束");
 }
+
+///*
+// 显示SplashView
+// */
+//
+//-(void)showSplashView
+//{
+//    WPSplashView *splash = [[WPSplashView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//
+//    //根据图片调整frame
+//    [splash setFrame:[splash boundsSize]];
+//    
+//    [self.view addSubview:splash];
+//}
 
 
 @end

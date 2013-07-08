@@ -71,6 +71,7 @@
 		D0A967E7178556940002C21B /* qj in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E6178556940002C21B /* qj */; };
 		D0A967E91785569A0002C21B /* va in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E81785569A0002C21B /* va */; };
 		D0A967FB178561FC0002C21B /* yu in Resources */ = {isa = PBXBuildFile; fileRef = D0A967FA178561FC0002C21B /* yu */; };
+		D0B2CA31178A68BF009AB4DE /* WPSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B2CA30178A68BF009AB4DE /* WPSplashView.m */; };
 		D0B7CF5B1762D1E400D0DF3A /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF571762D1E400D0DF3A /* icon-72.png */; };
 		D0B7CF5C1762D1E400D0DF3A /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF581762D1E400D0DF3A /* icon-72@2x.png */; };
 		D0B7CF5D1762D1E400D0DF3A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF591762D1E400D0DF3A /* icon.png */; };
@@ -224,6 +225,8 @@
 		D0A967E6178556940002C21B /* qj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = qj; sourceTree = "<group>"; };
 		D0A967E81785569A0002C21B /* va */ = {isa = PBXFileReference; lastKnownFileType = folder; path = va; sourceTree = "<group>"; };
 		D0A967FA178561FC0002C21B /* yu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = yu; sourceTree = "<group>"; };
+		D0B2CA2F178A68BF009AB4DE /* WPSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPSplashView.h; sourceTree = "<group>"; };
+		D0B2CA30178A68BF009AB4DE /* WPSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPSplashView.m; sourceTree = "<group>"; };
 		D0B7CF571762D1E400D0DF3A /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
 		D0B7CF581762D1E400D0DF3A /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
 		D0B7CF591762D1E400D0DF3A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -402,6 +405,8 @@
 				0FF88B9C17056776002B6A43 /* WPLoadView.h */,
 				0FF88B9D17056776002B6A43 /* WPLoadView.m */,
 				0FF88B9E17056776002B6A43 /* WPLoadView.xib */,
+				D0B2CA2F178A68BF009AB4DE /* WPSplashView.h */,
+				D0B2CA30178A68BF009AB4DE /* WPSplashView.m */,
 			);
 			path = Load;
 			sourceTree = "<group>";
@@ -899,6 +904,7 @@
 				0F229ABE1712985A005A670E /* NSString+FileFormat.m in Sources */,
 				D020C3201782C7AB0094A2B8 /* TabbarView.m in Sources */,
 				D020C3231782C82C0094A2B8 /* TabBarViewController.m in Sources */,
+				D0B2CA31178A68BF009AB4DE /* WPSplashView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

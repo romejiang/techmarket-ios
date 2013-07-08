@@ -35,6 +35,7 @@
 #import "WPHelpView.h"
 #import "AppDelegate.h"
 #import "NSBundle+Image.h"
+#import "WPSplashView.h"
 
 
 
@@ -105,6 +106,8 @@
     [self debugStart];
 
     [self _setup];
+    
+    WPSplashView *splashView = [[WPSplashView alloc]init];
     
     [UIApplication sharedApplication].statusBarHidden = NO;
     
