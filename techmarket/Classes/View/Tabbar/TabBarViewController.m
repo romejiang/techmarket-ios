@@ -83,29 +83,29 @@
     
     [self.view addSubview:_customView];
     
-    [self showSplashView];
-//    
-//    [self _showHelpView];
-//    
-//    [self debugStart];
-//    
-//    
-//    //tabBarView init
-//    _tabBarView = [[TabbarView alloc]init];
-//    
-//    _tabBarView.delegate = self;
-//    
-//    [_customView addSubview:_tabBarView];
-//    
-//    [self getViewControllers];
-//    
-//    for (CDVViewController * viewController in _arrayViewController)
-//    {
-//        [_customView insertSubview:viewController.view belowSubview:_tabBarView];
-//        viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
-//        
-//    }
-//    [self touchBtnAtIndex:0];
+//    [self showSplashView];
+//
+    [self _showHelpView];
+    
+    [self debugStart];
+    
+    
+    //tabBarView init
+    _tabBarView = [[TabbarView alloc]init];
+    
+    _tabBarView.delegate = self;
+    
+    [_customView addSubview:_tabBarView];
+    
+    [self getViewControllers];
+    
+    for (CDVViewController * viewController in _arrayViewController)
+    {
+        [_customView insertSubview:viewController.view belowSubview:_tabBarView];
+        viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
+        
+    }
+    [self touchBtnAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
