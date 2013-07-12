@@ -500,6 +500,7 @@ typedef void (^LogWithType)(NSString *log, LogType type) ;
     _infoView.hidden = YES;
     
     _warnView.hidden = NO;
+    
 }
 
 @end

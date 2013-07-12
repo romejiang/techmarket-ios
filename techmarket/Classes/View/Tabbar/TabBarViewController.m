@@ -34,6 +34,7 @@
 @property (strong, nonatomic)CDVViewController* FourViewController;
 @property (strong, nonatomic)CDVViewController* FiveViewController;
 
+
 @property (strong, nonatomic)ActivityIndicatorView * activityIndicatorView;
 
 //解决下移问题(存放CDv)
@@ -69,6 +70,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     
+
     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
 }
 
@@ -124,20 +126,11 @@
     
     CGSize sizeDevice = [UIScreen mainScreen].bounds.size;
     
-    //    //横屏判断
-    //    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation))
-    //    {
     width = sizeDevice.width;
     
     height = sizeDevice.height;
-    //    }
-    //    else if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation))
-    //    {
-    //       width = sizeDevice.height;
-    //
-    //       height = sizeDevice.width;
-    //    }
-    
+
+
     CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     
     _customView.frame = CGRectMake(0, 0, width, height);
@@ -157,6 +150,7 @@
 {
     return UIInterfaceOrientationMaskPortrait;
 }
+
 
 /**************************************************************************************/
 
