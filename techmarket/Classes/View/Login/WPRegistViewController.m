@@ -175,6 +175,8 @@
     {
         [self.ui_againPassword resignFirstResponder];
     }
+
+return (YES);
 }
 
 /**************************************************************************************/
@@ -198,10 +200,14 @@
 		}
         [self _alertViewWithTitle:@"信息" withMessage:@"用户名在6-15字数之间"];
 	}
-    else if ([self.ui_textFieldPhone.text length]<  11 || [self _isTelePhone] )
+    else if ([self.ui_textFieldPhone.text length]<  11  )
 	{
-		
+		[self _alertViewWithTitle:@"信息" withMessage:@"手机号码位数不全"];
 	}
+    else if ([self _isTelePhone])
+    {
+            [self _alertViewWithTitle:@"信息" withMessage:@"请确定手机格式正确"];
+    }
     else if ([self.ui_passWord.text length]<  6 || [self.ui_passWord.text length] >15 )
 	{
 		if ([self.ui_passWord.text length] == 0)
