@@ -8,7 +8,7 @@
 
 #import "WPLoginViewController.h"
 
-@interface WPLoginViewController ()
+@interface WPLoginViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -130,6 +130,10 @@
     [alert show];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+        return (YES);
+}
 
 /**************************************************************************************/
 

@@ -67,7 +67,6 @@
 		D03AB65C170561E000481530 /* libNSLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF88B8D17055714002B6A43 /* libNSLog.a */; };
 		D08B438E17128CCC00DD791B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08B438D17128CCC00DD791B /* StoreKit.framework */; };
 		D0A3F74F178FF17900BC3D89 /* WPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A3F74D178FF17900BC3D89 /* WPLoginViewController.m */; };
-		D0A3F750178FF17900BC3D89 /* WPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A3F74E178FF17900BC3D89 /* WPLoginViewController.xib */; };
 		D0A3F77A178FF8CD00BC3D89 /* WPRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A3F778178FF8CD00BC3D89 /* WPRegistViewController.m */; };
 		D0A3F77B178FF8CD00BC3D89 /* WPRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A3F779178FF8CD00BC3D89 /* WPRegistViewController.xib */; };
 		D0A4F1D5177A8ED500D1A742 /* libApplicationUnity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A4F1C6177A8E6300D1A742 /* libApplicationUnity.a */; };
@@ -92,6 +91,9 @@
 		D0B7CF8E1763223500D0DF3A /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF831763223400D0DF3A /* UMSShareListController.xib */; };
 		D0B7CF8F1763223500D0DF3A /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		D65E85E817935A6F001D1D21 /* WPLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65E85E717935A6F001D1D21 /* WPLoginView.m */; };
+		D65E85EA17935A94001D1D21 /* WPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65E85E917935A94001D1D21 /* WPLoginView.xib */; };
+		D65E85EC17935BBE001D1D21 /* WPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65E85EB17935BBE001D1D21 /* WPLoginViewController.xib */; };
 		D6F8B873176385BA008BBA4F /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F8B871176385BA008BBA4F /* libMobClickLibrary.a */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
 /* End PBXBuildFile section */
@@ -226,7 +228,6 @@
 		D08B438D17128CCC00DD791B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D0A3F74C178FF17900BC3D89 /* WPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPLoginViewController.h; sourceTree = "<group>"; };
 		D0A3F74D178FF17900BC3D89 /* WPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPLoginViewController.m; sourceTree = "<group>"; };
-		D0A3F74E178FF17900BC3D89 /* WPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPLoginViewController.xib; sourceTree = "<group>"; };
 		D0A3F777178FF8CC00BC3D89 /* WPRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPRegistViewController.h; sourceTree = "<group>"; };
 		D0A3F778178FF8CD00BC3D89 /* WPRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPRegistViewController.m; sourceTree = "<group>"; };
 		D0A3F779178FF8CD00BC3D89 /* WPRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPRegistViewController.xib; sourceTree = "<group>"; };
@@ -265,6 +266,10 @@
 		D0B7CF831763223400D0DF3A /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		D65E85E617935A6F001D1D21 /* WPLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPLoginView.h; sourceTree = "<group>"; };
+		D65E85E717935A6F001D1D21 /* WPLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPLoginView.m; sourceTree = "<group>"; };
+		D65E85E917935A94001D1D21 /* WPLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPLoginView.xib; sourceTree = "<group>"; };
+		D65E85EB17935BBE001D1D21 /* WPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPLoginViewController.xib; sourceTree = "<group>"; };
 		D6F8B871176385BA008BBA4F /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		D6F8B872176385BA008BBA4F /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = techmarket/config.xml; sourceTree = "<group>"; };
@@ -627,10 +632,13 @@
 		D0A3F748178FF0F600BC3D89 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D65E85EB17935BBE001D1D21 /* WPLoginViewController.xib */,
 				D0A3F74C178FF17900BC3D89 /* WPLoginViewController.h */,
 				D0A3F74D178FF17900BC3D89 /* WPLoginViewController.m */,
-				D0A3F74E178FF17900BC3D89 /* WPLoginViewController.xib */,
 				D0A3F777178FF8CC00BC3D89 /* WPRegistViewController.h */,
+				D65E85E617935A6F001D1D21 /* WPLoginView.h */,
+				D65E85E717935A6F001D1D21 /* WPLoginView.m */,
+				D65E85E917935A94001D1D21 /* WPLoginView.xib */,
 				D0A3F778178FF8CD00BC3D89 /* WPRegistViewController.m */,
 				D0A3F779178FF8CD00BC3D89 /* WPRegistViewController.xib */,
 			);
@@ -891,8 +899,9 @@
 				D0A967E7178556940002C21B /* qj in Resources */,
 				D0A967E91785569A0002C21B /* va in Resources */,
 				D0A967FB178561FC0002C21B /* yu in Resources */,
-				D0A3F750178FF17900BC3D89 /* WPLoginViewController.xib in Resources */,
 				D0A3F77B178FF8CD00BC3D89 /* WPRegistViewController.xib in Resources */,
+				D65E85EA17935A94001D1D21 /* WPLoginView.xib in Resources */,
+				D65E85EC17935BBE001D1D21 /* WPLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,6 +942,7 @@
 				D0B2CA31178A68BF009AB4DE /* WPSplashView.m in Sources */,
 				D0A3F74F178FF17900BC3D89 /* WPLoginViewController.m in Sources */,
 				D0A3F77A178FF8CD00BC3D89 /* WPRegistViewController.m in Sources */,
+				D65E85E817935A6F001D1D21 /* WPLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
