@@ -18,6 +18,7 @@
 
 @implementation WPLoginViewController
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self _addListenKeyBoard];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -40,13 +42,10 @@
 }
 
 
-
-
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
 
 }
-
 
 - (void)viewDidUnload {
     [self setUserName:nil];
@@ -54,7 +53,6 @@
     [self setUi_scrollView:nil];
     [super viewDidUnload];
 }
-
 
 /**************************************************************************************/
 
@@ -65,7 +63,6 @@
 
 
 /**************************************************************************************/
-
 
 -(void)_addListenKeyBoard
 {
@@ -81,7 +78,6 @@
 												 name:UIKeyboardWillHideNotification
 											   object:nil];
 }
-
 
 //移除监听
 
@@ -130,9 +126,27 @@
     [alert show];
 }
 
+/**************************************************************************************/
+
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+#pragma mark -
+
+
+/**************************************************************************************/
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-        return (YES);
+    if (textField == _userName)
+    {
+        [_password becomeFirstResponder];
+    }
+    else
+    {
+        [_password resignFirstResponder];
+    }
+    return (YES);
 }
 
 /**************************************************************************************/
@@ -150,38 +164,25 @@
 	[self _removeListenKeyBoard];
 	
 	//判断textField是否正在编辑模式
-	
 	if (self.password.editing)
 	{
 		//在锁定模式下 不可更换密码样式 所以：
         [self.password resignFirstResponder];
         self.password.secureTextEntry	=	!self.password.secureTextEntry;
         [self.password becomeFirstResponder];
-        
-	}
+ 	}
 	else
 	{
         self.password.secureTextEntry	=	!self.password.secureTextEntry;
 	}
 	
-	//根据加密的样式更换图片
-//	
-//	if (!self.password.secureTextEntry)
-//	{
-//		[self.ui_buttonSecure setImage:[UIImage imageNamed:@"login_bt_hide_password.png"] forState:UIControlStateNormal];
-//		[self.ui_buttonSecure setImage:[UIImage imageNamed:@"login_bt_hide_password_press.png"] forState:UIControlStateHighlighted];
-//	}
-//	else
-//	{
-//		[self.ui_buttonSecure setImage:[UIImage imageNamed:@"login_bt_show_password.png"] forState:UIControlStateNormal];
-//		[self.ui_buttonSecure setImage:[UIImage imageNamed:@"login_bt_show_password_press.png"] forState:UIControlStateHighlighted];
-//	}
 	[self _addListenKeyBoard];
 }
 
 
 - (IBAction)onFind:(id)sender
 {
+    [self.view removeFromSuperview];
 }
 
 
@@ -191,10 +192,10 @@
 	{
 		if ([self.userName.text length] == 0)
 		{
-            [self _alertViewWithTitle:@"信息" withMessage:@"密码不得为空"];
+            [self _alertViewWithTitle:@"信息" withMessage:@"用户名不得为空"];
 			return;
 		}
-        [self _alertViewWithTitle:@"信息" withMessage:@"密码在6-15字数之间"];
+        [self _alertViewWithTitle:@"信息" withMessage:@"用户名在6-15字数之间"];
 	}
     else if ([self.password.text length]<  6 || [self.password.text length] >15 )
     {
@@ -209,12 +210,12 @@
     {
         
     }
-
 }
 - (IBAction)onRegist:(id)sender
 {
+    
+    
 }
-
 
 
 @end

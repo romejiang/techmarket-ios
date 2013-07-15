@@ -19,6 +19,8 @@
 #import "TabbarView.h"
 #import "WPHelpView.h"
 #import "WPSplashView.h"
+#import "WPLoginViewController.h"
+#import "WPRegistViewController.h"
 
 #define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
@@ -34,7 +36,8 @@
 @property (strong, nonatomic)CDVViewController* FourViewController;
 @property (strong, nonatomic)CDVViewController* FiveViewController;
 
-
+@property (strong, nonatomic)WPLoginViewController *    loginView;
+@property (strong, nonatomic)WPRegistViewController*     regist;
 @property (strong, nonatomic)ActivityIndicatorView * activityIndicatorView;
 
 //解决下移问题(存放CDv)
@@ -85,13 +88,13 @@
     
     [self.view addSubview:_customView];
     
-//    [self showSplashView];
-//
+    [self _showLoginView];
+    
     [self _showHelpView];
     
     [self debugStart];
     
-    
+       
     //tabBarView init
     _tabBarView = [[TabbarView alloc]init];
     
@@ -233,6 +236,16 @@
     
     _arrayViewController = [NSArray arrayWithObjects:_firstViewController,_secondViewController,_thirdViewController,_FourViewController,_FiveViewController, nil];
     
+}
+
+/*
+ 显示登陆界面
+ */
+-(void)_showLoginView
+{
+    self.loginView = [[WPLoginViewController alloc]initWithNibName:@"WPLoginViewController" bundle:nil];
+    [self.view addSubview:self.loginView.view];
+
 }
 
 /*
