@@ -7,7 +7,7 @@
 //
 
 
-#define kTabBarHeight								60
+#define kTabBarHeight								57
 
 #import <QuartzCore/QuartzCore.h>
 #import <Cordova/CDVViewController.h>
@@ -24,7 +24,7 @@
 
 #define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
-@interface TabBarViewController ()<tabbarDelegate,WPHelpViewDelegate>
+@interface TabBarViewController ()<tabbarDelegate,WPHelpViewDelegate,WpLoginViewDelegate>
 
 
 @property (strong, nonatomic)WPHelpView*        helpView;
@@ -204,6 +204,19 @@
 {
     [UIApplication sharedApplication].statusBarHidden = NO;
 }
+
+
+/**************************************************************************************/
+
+#pragma mark -
+#pragma mark WpLoginViewDelegate
+#pragma mark -
+
+/**************************************************************************************/
+
+
+
+
 /**************************************************************************************/
 
 #pragma mark -
@@ -244,9 +257,13 @@
 -(void)_showLoginView
 {
     self.loginView = [[WPLoginViewController alloc]initWithNibName:@"WPLoginViewController" bundle:nil];
+    [self.loginView setDelegate:self];
     [self.view addSubview:self.loginView.view];
 
 }
+
+
+
 
 /*
  显示帮助

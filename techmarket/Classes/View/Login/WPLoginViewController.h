@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol WpLoginViewDelegate <NSObject>
+
+@optional
+
+-(void)delegateWithRegist;
+
+@end
+
 @interface WPLoginViewController : UIViewController
+
+-(void)setDelegate:(id<WpLoginViewDelegate>)_delegate;
+
 
 @end

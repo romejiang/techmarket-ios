@@ -6,6 +6,7 @@
 //
 //
 
+#define KUILoginViewController_ScrollViewOffset     100
 #import "WPLoginViewController.h"
 
 @interface WPLoginViewController ()<UITextFieldDelegate>
@@ -13,11 +14,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIScrollView *ui_scrollView;
+@property (unsafe_unretained,nonatomic)id<WpLoginViewDelegate> loginDelegate;
 
 @end
 
 @implementation WPLoginViewController
 
+
+-(void)setDelegate:(id<WpLoginViewDelegate>)_delegate
+{
+    self.loginDelegate =_delegate;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +38,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self _addListenKeyBoard];
+    
+    [self.userName becomeFirstResponder];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -99,7 +109,7 @@
     [UIView beginAnimations:nil
                     context:nil];
     [UIView setAnimationDuration:0.3];
-//    [self.ui_scrollView setContentOffset:CGPointMake(0, KUILoginViewController_ScrollViewOffset)];
+    [self.ui_scrollView setContentOffset:CGPointMake(0, KUILoginViewController_ScrollViewOffset)];
     [UIView commitAnimations];
 }
 
@@ -211,10 +221,12 @@
         
     }
 }
+
+
 - (IBAction)onRegist:(id)sender
 {
     
-    
+    [self.loginDelegate delegateWithRegist];
 }
 
 

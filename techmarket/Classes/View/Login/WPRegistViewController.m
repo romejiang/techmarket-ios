@@ -7,6 +7,7 @@
 //
 
 #import "WPRegistViewController.h"
+#define KUIRegistViewController_ScrollViewOffset 100
 
 @interface WPRegistViewController () <UITextFieldDelegate>
 
@@ -14,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *ui_textFieldPhone;
 @property (weak, nonatomic) IBOutlet UITextField *ui_passWord;
 @property (weak, nonatomic) IBOutlet UITextField *ui_againPassword;
+@property (weak, nonatomic) IBOutlet UIScrollView *ui_scrollView;
 
 @end
 
@@ -42,6 +44,7 @@
 
 - (void)viewDidUnload
 {
+    [self setUi_scrollView:nil];
     [super viewDidUnload];
     
     [self setUi_textFieldUserName:nil];
@@ -96,7 +99,8 @@
     [UIView beginAnimations:nil
                     context:nil];
     [UIView setAnimationDuration:0.3];
-    //    [self.ui_scrollView setContentOffset:CGPointMake(0, KUILoginViewController_ScrollViewOffset)];
+    [self.ui_scrollView setContentOffset:CGPointMake(0, KUIRegistViewController_ScrollViewOffset)];
+    
     [UIView commitAnimations];
 }
 
@@ -107,7 +111,7 @@
 {
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];
-//    [self.ui_scrollView setContentOffset:CGPointMake(0, 0)];
+    [self.ui_scrollView setContentOffset:CGPointMake(0, 0)];
     [UIView commitAnimations];
 }
 
