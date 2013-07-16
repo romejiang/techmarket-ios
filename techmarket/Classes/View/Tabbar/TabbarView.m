@@ -54,13 +54,12 @@
 {
     //tabBarView 外页面
     _tabbarView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tabbar_background.png"]];
-    _tabbarView.contentMode = UIViewContentModeScaleAspectFill;
     [_tabbarView setUserInteractionEnabled:YES];
     [self addSubview:_tabbarView];
     
     //中间那个image
     _tabbarViewCenter = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tabbar_round.png"]];
-    [self addSubview:_tabbarViewCenter];
+    [self insertSubview:_tabbarViewCenter aboveSubview:_tabbarView];
     
     //buttonCenter
     _button_center = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -68,15 +67,15 @@
     [_button_center setImage:[UIImage imageNamed:@"tabbar_innovation.png"] forState:UIControlStateNormal];
     [_button_center setImage:[UIImage imageNamed:@"tabbar_innovation_down.png"] forState:UIControlStateHighlighted];
     [_button_center addTarget:self action:@selector(btn1Click:) forControlEvents:UIControlEventTouchUpInside];
-    [_tabbarViewCenter addSubview:_button_center];
-    
-     //button0
+    [self insertSubview:_button_center aboveSubview:_tabbarViewCenter];
+
+   //button0
     _button_0 = [UIButton buttonWithType:UIButtonTypeCustom];
     [_button_0 setTag:0];
     [_button_0 setImage:[UIImage imageNamed:@"tabbar_home.png"] forState:UIControlStateNormal];
     [_button_0 setImage:[UIImage imageNamed:@"tabbar_home_down.png"] forState:UIControlStateHighlighted];
     [_button_0 addTarget:self action:@selector(btn1Click:) forControlEvents:UIControlEventTouchUpInside];
-     [_tabbarView addSubview:_button_1];
+     [_tabbarView addSubview:_button_0];
     
     //button1
     _button_1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -113,11 +112,12 @@
     
     [_tabbarViewCenter setFrame:CGRectMake(0, 0, 65, 57)];
     
+     _tabbarViewCenter.center = CGPointMake(self.center.x, self.bounds.size.height/2);
+    
     [_button_center setFrame:CGRectMake(0, 0, 65, 57)];
     
-    _tabbarViewCenter.center = CGPointMake(self.center.x, self.bounds.size.height);
-    
-
+    _button_center.center = CGPointMake(self.center.x, self.bounds.size.height/2);
+  
     [_button_0 setFrame:CGRectMake(0, 0, 45, 45)];
     
     [_button_1 setFrame:CGRectMake(65, 0, 45, 45)];
