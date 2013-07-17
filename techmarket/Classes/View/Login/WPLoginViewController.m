@@ -6,7 +6,7 @@
 //
 //
 
-#define KUILoginViewController_ScrollViewOffset     100
+#define KUILoginViewController_ScrollViewOffset     180
 #import "WPLoginViewController.h"
 
 @interface WPLoginViewController ()<UITextFieldDelegate>
