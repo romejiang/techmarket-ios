@@ -14,6 +14,8 @@
 @optional
 
 -(void)delegateWithRegist;
+-(void)delegateWithLogin;
+-(void)delegateWithLoginSuccess;
 
 @end
 

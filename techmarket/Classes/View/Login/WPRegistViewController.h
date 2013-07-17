@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WPLoginViewController.h"
 
 @interface WPRegistViewController : UIViewController
+
+
+
 
 @end

@@ -214,7 +214,25 @@
 
 /**************************************************************************************/
 
+-(void)delegateWithRegist
+{
+    
+    [UIView transitionFromView:<#(UIView *)#> toView:<#(UIView *)#> duration:<#(NSTimeInterval)#> options:<#(UIViewAnimationOptions)#> completion:<#^(BOOL finished)completion#>]
 
+
+}
+
+-(void)delegateWithLogin
+{
+
+
+}
+-(void)delegateWithLoginSuccess
+{
+   
+
+
+}
 
 
 /**************************************************************************************/
@@ -261,8 +279,6 @@
     [self.view addSubview:self.loginView.view];
 
 }
-
-
 
 
 /*
@@ -331,7 +347,7 @@
 ///*
 // 显示SplashView
 // */
-//
+
 //-(void)showSplashView
 //{
 //    WPSplashView *splash = [[WPSplashView alloc]initWithFrame:[UIScreen mainScreen].bounds];

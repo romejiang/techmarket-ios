@@ -218,15 +218,14 @@
     }
     else
     {
-        
+        [self.loginDelegate delegateWithLoginSuccess];
     }
 }
 
 
 - (IBAction)onRegist:(id)sender
 {
-    
-    [self.loginDelegate delegateWithRegist];
+     [self.loginDelegate delegateWithRegist];
 }
 
 

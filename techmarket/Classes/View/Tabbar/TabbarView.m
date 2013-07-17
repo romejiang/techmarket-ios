@@ -121,9 +121,7 @@
      _tabbarViewCenter.center = CGPointMake(self.center.x, self.bounds.size.height/2);
     
     [_button_center setFrame:CGRectMake(0, 0, 65, 57)];
-    
-//    _button_center.center = CGPointMake(self.center.x, self.bounds.size.height/2);
-  
+      
     [_button_0 setFrame:CGRectMake(10, 2, 45, 45)];
     
     [_button_1 setFrame:CGRectMake(67, 2, 45, 45)];
