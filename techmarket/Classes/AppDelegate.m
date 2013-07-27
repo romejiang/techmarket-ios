@@ -31,7 +31,7 @@
 
 #import <Cordova/CDVPlugin.h>
 
-#import <OpenUDID/OpenUDID.h>
+#import <OpenUDID/OpenUDIDD.h>
 
 #import <ApplicationInfo/ApplicationInfo.h>
 #import <CoreLocation/CoreLocation.h>
@@ -51,7 +51,10 @@
 
 #define NewVersionForCurrentRun @"isnewversionforcurrentrun"
 
-@interface AppDelegate () <CLLocationManagerDelegate>
+#import "BPush.h"
+
+@interface AppDelegate () <CLLocationManagerDelegate,
+                           BPushDelegate>
 
 @property (strong, nonatomic) ASIFormDataRequest *request;
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -99,11 +102,17 @@
 {
     NSInfo(@"目前使用的服务器是%@", API_DOMAIN);
     
+    [BPush setupChannel:launchOptions];
+    
+    [BPush setDelegate:self];
+    
 #if ! TARGET_IPHONE_SIMULATOR
+    
 	
 	[application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
-	 UIRemoteNotificationTypeSound |
-	 UIRemoteNotificationTypeAlert];
+                                                    UIRemoteNotificationTypeSound |
+                                                    UIRemoteNotificationTypeAlert];
+    
     
     [_locationManager startUpdatingLocation];
 	
@@ -220,7 +229,11 @@
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-	
+    //bpush
+	[BPush registerDeviceToken:deviceToken];
+    
+    [BPush bindChannel];
+    
 	NSString *stringToken   =   [[[[NSString stringWithFormat:@"%@", deviceToken] stringByReplacingOccurrencesOfString:@"<"
 																											withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
@@ -242,7 +255,7 @@
     
     [dicSend setObject:APP_ID forKey:KCaid];
     
-    [dicSend setObject:[OpenUDID value] forKey:KUdid];
+    [dicSend setObject:[OpenUDIDD value] forKey:KUdid];
     
     [dicSend setObject:stringToken forKey:KToken];
     
@@ -303,7 +316,8 @@
     NSLog(@"Error in registration. Error: %@", error);
 }
 
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+-(void)application:(UIApplication *)application
+       didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     NSString *url = [userInfo objectForKey:@"uri"];
     
@@ -484,7 +498,7 @@
     
     [dicSend setObject:APP_ID forKey:KCaid];
     
-    [dicSend setObject:[OpenUDID value] forKey:KUdid];
+    [dicSend setObject:[OpenUDIDD value] forKey:KUdid];
     
     [dicSend setObject:@"iphone" forKey:KPlatform];
     
@@ -527,6 +541,42 @@
     
     [request startAsynchronous];
 }
+
+/**************************************************************************************/
+
+#pragma mark -
+#pragma mark BPushDelegate ios6以上版本
+#pragma mark -
+
+/**************************************************************************************/
+
+- (void) onMethod:(NSString*)method response:(NSDictionary*)data
+{
+    NSDictionary* res = [[NSDictionary alloc] initWithDictionary:data];
+
+    if ([BPushRequestMethod_Bind isEqualToString:method])
+    {
+        NSDictionary* res = [[NSDictionary alloc] initWithDictionary:data];
+//        NSString *appid = [res valueForKey:BPushRequestAppIdKey];
+//        NSString *userid = [res valueForKey:BPushRequestUserIdKey];
+//        NSString *channelid = [res valueForKey:BPushRequestChannelIdKey];
+//        int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
+//        NSString *requestid = [res valueForKey:BPushRequestRequestIdKey];
+        
+        NSLog(@"res = %@",res);
+    }
+    else if ([BPushRequestMethod_Unbind isEqualToString:method])
+    {
+        int returnCode = [[res valueForKey:BPushRequestErrorCodeKey]intValue];
+        
+        NSLog(@"returnCode = %d",returnCode);
+    }
+}
+
+
+
+
+
 
 
 @end
