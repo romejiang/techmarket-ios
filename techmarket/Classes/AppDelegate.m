@@ -562,7 +562,7 @@
 //        NSString *channelid = [res valueForKey:BPushRequestChannelIdKey];
 //        int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
 //        NSString *requestid = [res valueForKey:BPushRequestRequestIdKey];
-        
+     
         NSLog(@"res = %@",res);
     }
     else if ([BPushRequestMethod_Unbind isEqualToString:method])
@@ -572,11 +572,6 @@
         NSLog(@"returnCode = %d",returnCode);
     }
 }
-
-
-
-
-
 
 
 @end
