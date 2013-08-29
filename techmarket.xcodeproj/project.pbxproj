@@ -139,6 +139,9 @@
 		D0B7CF8D1763223500D0DF3A /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF821763223400D0DF3A /* UMSnsAccountViewController.xib */; };
 		D0B7CF8E1763223500D0DF3A /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF831763223400D0DF3A /* UMSShareListController.xib */; };
 		D0B7CF8F1763223500D0DF3A /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */; };
+		D0DFDD6D17A39ECB0038EDE9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFDD6B17A39ECB0038EDE9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0DFDD6E17A39ECB0038EDE9 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DFDD6C17A39ECB0038EDE9 /* libBPush.a */; };
+		D0DFDD7317A39F540038EDE9 /* BPushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0DFDD7217A39F540038EDE9 /* BPushConfig.plist */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		D65E85EC17935BBE001D1D21 /* WPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65E85EB17935BBE001D1D21 /* WPLoginViewController.xib */; };
 		D6F8B873176385BA008BBA4F /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F8B871176385BA008BBA4F /* libMobClickLibrary.a */; };
@@ -361,6 +364,11 @@
 		D0B7CF821763223400D0DF3A /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
 		D0B7CF831763223400D0DF3A /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		D0DFDD6917A39ECB0038EDE9 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
+		D0DFDD6A17A39ECB0038EDE9 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		D0DFDD6B17A39ECB0038EDE9 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		D0DFDD6C17A39ECB0038EDE9 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
+		D0DFDD7217A39F540038EDE9 /* BPushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BPushConfig.plist; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		D65E85EB17935BBE001D1D21 /* WPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPLoginViewController.xib; sourceTree = "<group>"; };
 		D6F8B871176385BA008BBA4F /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
@@ -400,6 +408,7 @@
 				D0B7CF861763223400D0DF3A /* libUMSocial_Sdk_2.1.3.a in Frameworks */,
 				D0B7CF871763223500D0DF3A /* libUMSocial_Sdk_Comment_2.1.3.a in Frameworks */,
 				D6F8B873176385BA008BBA4F /* libMobClickLibrary.a in Frameworks */,
+				D0DFDD6E17A39ECB0038EDE9 /* libBPush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +452,7 @@
 				D03EC66017560AB000870E2A /* OpenUDID.xcodeproj */,
 				D03EC659175609A600870E2A /* ApplicationInfo.xcodeproj */,
 				D6F8B870176385BA008BBA4F /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
+				D0DFDD6817A39ECB0038EDE9 /* baiduPush */,
 				D0B7CF691763223400D0DF3A /* UMSocial_Sdk_2.1.3 */,
 				0FF88B311705565C002B6A43 /* FireUIPagedScrollView */,
 				0FF88B341705565C002B6A43 /* NSBundle+Image */,
@@ -601,6 +611,7 @@
 				3072F99613A8081B00425683 /* Capture.bundle */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* techmarket-Info.plist */,
+				D0DFDD7217A39F540038EDE9 /* BPushConfig.plist */,
 			);
 			name = Resources;
 			path = techmarket/Resources;
@@ -889,6 +900,17 @@
 			path = SocialSDKXib;
 			sourceTree = "<group>";
 		};
+		D0DFDD6817A39ECB0038EDE9 /* baiduPush */ = {
+			isa = PBXGroup;
+			children = (
+				D0DFDD6917A39ECB0038EDE9 /* BPush.h */,
+				D0DFDD6A17A39ECB0038EDE9 /* JSONKit.h */,
+				D0DFDD6B17A39ECB0038EDE9 /* JSONKit.m */,
+				D0DFDD6C17A39ECB0038EDE9 /* libBPush.a */,
+			);
+			path = baiduPush;
+			sourceTree = "<group>";
+		};
 		D6F8B870176385BA008BBA4F /* UMAnalytics_Sdk_2.2.0.OpenUDID */ = {
 			isa = PBXGroup;
 			children = (
@@ -1113,6 +1135,7 @@
 				D0AC12BD17952F6D00893798 /* tabbar_more_down@2x.png in Resources */,
 				D0AC12BE17952F6D00893798 /* tabbar_round.png in Resources */,
 				D0AC12BF17952F6D00893798 /* tabbar_round@2x.png in Resources */,
+				D0DFDD7317A39F540038EDE9 /* BPushConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1153,6 +1176,7 @@
 				D0B2CA31178A68BF009AB4DE /* WPSplashView.m in Sources */,
 				D0A3F74F178FF17900BC3D89 /* WPLoginViewController.m in Sources */,
 				D0A3F77A178FF8CD00BC3D89 /* WPRegistViewController.m in Sources */,
+				D0DFDD6D17A39ECB0038EDE9 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,6 +1249,7 @@
 					"\"$(SRCROOT)/techmarket/Libs/UMSocial_Sdk_2.1.3/frameworks/Wechat\"",
 					"\"$(SRCROOT)/techmarket/Libs/UMSocial_Sdk_2.1.3\"",
 					"\"$(SRCROOT)/techmarket/Libs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
+					"\"$(SRCROOT)/techmarket/Libs/baiduPush\"",
 				);
 				PRODUCT_NAME = techmarket;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1249,6 +1274,7 @@
 					"\"$(SRCROOT)/techmarket/Libs/UMSocial_Sdk_2.1.3/frameworks/Wechat\"",
 					"\"$(SRCROOT)/techmarket/Libs/UMSocial_Sdk_2.1.3\"",
 					"\"$(SRCROOT)/techmarket/Libs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
+					"\"$(SRCROOT)/techmarket/Libs/baiduPush\"",
 				);
 				PRODUCT_NAME = techmarket;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1266,7 +1292,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhao jing (6S5N86A2T8)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_THUMB_SUPPORT = NO;
@@ -1294,6 +1320,7 @@
 					"-all_load",
 					"-Obj-C",
 				);
+				PROVISIONING_PROFILE = "E5A6106B-BE7C-4C09-9A06-7EF79EE83CC0";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1309,7 +1336,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhao jing (6S5N86A2T8)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1336,6 +1363,7 @@
 					"-all_load",
 					"-Obj-C",
 				);
+				PROVISIONING_PROFILE = "E5A6106B-BE7C-4C09-9A06-7EF79EE83CC0";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
