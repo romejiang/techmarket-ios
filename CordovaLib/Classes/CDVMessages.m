@@ -8,7 +8,7 @@
 
 #import "CDVMessages.h"
 
-#import "KGStatusBar.h"
+#import <ApplicationUnity/KGStatusBar.h>
 
 @implementation CDVMessages
 

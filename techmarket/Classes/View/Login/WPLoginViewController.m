@@ -6,8 +6,23 @@
 //
 //
 
-#define KUILoginViewController_ScrollViewOffset     180
+#import <ApplicationUnity/ASIFormDataRequest.h>
+
+#import <ApplicationUnity/KGStatusBar.h>
+
 #import "WPLoginViewController.h"
+
+#import "WPFindPasswordViewController.h"
+
+#import "WPNetKey.h"
+
+#define KUILoginViewController_ScrollViewOffset     180
+
+#define KUILoginViewController_Password             @"password"
+
+#define KUILoginViewController_UserName             @"userName"
+
+
 
 @interface WPLoginViewController ()<UITextFieldDelegate>
 
@@ -15,6 +30,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIScrollView *ui_scrollView;
 @property (unsafe_unretained,nonatomic)id<WpLoginViewDelegate> loginDelegate;
+@property (strong, nonatomic) ASIHTTPRequest *asiHttpRequest;
+
+
 
 @end
 
@@ -54,7 +72,7 @@
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-
+    
 }
 
 - (void)viewDidUnload {
@@ -146,7 +164,78 @@
 
 /**************************************************************************************/
 
-
+-(void)_netserviceUserLoginWithUserName:(NSString*)paramUserName
+                            andPassword:(NSString*)paramPassWord
+{
+    
+    NSString *stringUrl = @"http://market.xayoudao.com/apiproxy.php?action=userLoginToken";
+    
+    __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:stringUrl]];
+    
+    _asiHttpRequest = request;
+    
+    [request setRequestMethod:@"POST"];
+    
+    [request setPostValue:paramUserName forKey:KUILoginViewController_UserName];
+    
+    [request setPostValue:paramPassWord forKey:KUILoginViewController_Password];
+    
+    [request setCompletionBlock:^{
+        
+        NSError *error = nil;
+        
+        NSData *dataApp = [_asiHttpRequest responseData];
+        
+        //解析appstore数据
+        NSDictionary *dicApp = [NSJSONSerialization JSONObjectWithData:dataApp
+                                                               options:kNilOptions
+                                                                 error:&error];
+        if (error)
+        {
+            NSLog(@"数据解析错误");
+            
+            [self _alertViewWithTitle:@"登陆失败"
+                          withMessage:@"由于网路原因，登陆失败请重试"];
+        }
+        else
+        {
+            NSLog(@"%@",dicApp);
+            
+            NSString *strNetKeyCode = [dicApp objectForKey:WPNetKeyCode];
+            
+            if ([strNetKeyCode intValue] == 0)
+            {
+                [KGStatusBar showSuccessWithStatus:@"登陆成功"];
+                
+                [self dismissModalViewControllerAnimated:YES];
+            }
+            
+            else
+            {
+                NSString *strNetMessage = [dicApp objectForKey:WPNetKeyMessage];
+                
+                [self _alertViewWithTitle:@"登录失败"
+                              withMessage:strNetMessage];
+                
+            }
+            
+            [self.loginDelegate delegateWithLoginSuccess];
+        }
+        
+        
+        
+    }];
+    
+    [request  setFailedBlock:^{
+        
+        [self _alertViewWithTitle:@"登陆失败"
+                      withMessage:@"由于网路原因，登陆失败请重试"];
+        
+    }];
+    
+    [request startAsynchronous];
+    
+}
 
 /**************************************************************************************/
 
@@ -204,40 +293,47 @@
 
 - (IBAction)onFind:(id)sender
 {
-    [self.view removeFromSuperview];
+    
+    WPFindPasswordViewController *findPassWord = [[WPFindPasswordViewController alloc]initWithNibName:@"WPFindPasswordViewController"
+                                                                                               bundle:nil];
+    
+    [self presentModalViewController:findPassWord animated:YES];
+    
 }
 
 
 - (IBAction)onLogin:(id)sender
 {
-    if ([self.userName.text length]<  6 || [self.userName.text length] >15 )
+    if ([self.userName.text length]<  2 || [self.userName.text length] >10 )
 	{
 		if ([self.userName.text length] == 0)
 		{
             [self _alertViewWithTitle:@"信息" withMessage:@"用户名不得为空"];
 			return;
 		}
-        [self _alertViewWithTitle:@"信息" withMessage:@"用户名在6-15字数之间"];
+        [self _alertViewWithTitle:@"信息" withMessage:@"用户名在2-10字数之间"];
 	}
-    else if ([self.password.text length]<  6 || [self.password.text length] >15 )
+    else if ([self.password.text length]<  5 || [self.password.text length] >10 )
     {
         if ([self.password.text length] == 0)
         {
             [self _alertViewWithTitle:@"信息" withMessage:@"密码不得为空"];
             return;
         }
-        [self _alertViewWithTitle:@"信息" withMessage:@"密码在6-15字数之间"];
+        [self _alertViewWithTitle:@"信息" withMessage:@"密码在5-10字数之间"];
     }
     else
     {
-        [self.loginDelegate delegateWithLoginSuccess];
+        [self _netserviceUserLoginWithUserName:self.userName.text
+                                   andPassword:self.password.text];
+        
     }
 }
 
 
 - (IBAction)onRegist:(id)sender
 {
-     [self.loginDelegate delegateWithRegist];
+    [self.loginDelegate delegateWithRegist];
 }
 
 

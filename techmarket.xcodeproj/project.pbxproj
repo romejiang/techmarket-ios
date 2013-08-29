@@ -69,6 +69,8 @@
 		D0A3F74F178FF17900BC3D89 /* WPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A3F74D178FF17900BC3D89 /* WPLoginViewController.m */; };
 		D0A3F77A178FF8CD00BC3D89 /* WPRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A3F778178FF8CD00BC3D89 /* WPRegistViewController.m */; };
 		D0A3F77B178FF8CD00BC3D89 /* WPRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A3F779178FF8CD00BC3D89 /* WPRegistViewController.xib */; };
+		D0A443C417CEF56800A569F0 /* WPFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A443C217CEF56800A569F0 /* WPFindPasswordViewController.m */; };
+		D0A443C517CEF56800A569F0 /* WPFindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A443C317CEF56800A569F0 /* WPFindPasswordViewController.xib */; };
 		D0A4F1D5177A8ED500D1A742 /* libApplicationUnity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A4F1C6177A8E6300D1A742 /* libApplicationUnity.a */; };
 		D0A967E51785568D0002C21B /* mec in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E41785568D0002C21B /* mec */; };
 		D0A967E7178556940002C21B /* qj in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E6178556940002C21B /* qj */; };
@@ -281,6 +283,10 @@
 		D0A3F777178FF8CC00BC3D89 /* WPRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPRegistViewController.h; sourceTree = "<group>"; };
 		D0A3F778178FF8CD00BC3D89 /* WPRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPRegistViewController.m; sourceTree = "<group>"; };
 		D0A3F779178FF8CD00BC3D89 /* WPRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPRegistViewController.xib; sourceTree = "<group>"; };
+		D0A443C117CEF56800A569F0 /* WPFindPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFindPasswordViewController.h; sourceTree = "<group>"; };
+		D0A443C217CEF56800A569F0 /* WPFindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFindPasswordViewController.m; sourceTree = "<group>"; };
+		D0A443C317CEF56800A569F0 /* WPFindPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPFindPasswordViewController.xib; sourceTree = "<group>"; };
+		D0A443D017CF122B00A569F0 /* WPNetKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPNetKey.h; sourceTree = "<group>"; };
 		D0A4F1C1177A8E6300D1A742 /* ApplicationUnity.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ApplicationUnity.xcodeproj; path = ApplicationUnity/ApplicationUnity.xcodeproj; sourceTree = "<group>"; };
 		D0A967E41785568D0002C21B /* mec */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mec; sourceTree = "<group>"; };
 		D0A967E6178556940002C21B /* qj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = qj; sourceTree = "<group>"; };
@@ -500,6 +506,7 @@
 		0FF88B9617056776002B6A43 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0A443BD17CEF52E00A569F0 /* FindPassword */,
 				D0A3F748178FF0F600BC3D89 /* Login */,
 				D020C31D1782C7AB0094A2B8 /* Tabbar */,
 				0FF88B9717056776002B6A43 /* Help */,
@@ -745,8 +752,19 @@
 				D0A3F777178FF8CC00BC3D89 /* WPRegistViewController.h */,
 				D0A3F778178FF8CD00BC3D89 /* WPRegistViewController.m */,
 				D0A3F779178FF8CD00BC3D89 /* WPRegistViewController.xib */,
+				D0A443D017CF122B00A569F0 /* WPNetKey.h */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D0A443BD17CEF52E00A569F0 /* FindPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D0A443C117CEF56800A569F0 /* WPFindPasswordViewController.h */,
+				D0A443C217CEF56800A569F0 /* WPFindPasswordViewController.m */,
+				D0A443C317CEF56800A569F0 /* WPFindPasswordViewController.xib */,
+			);
+			path = FindPassword;
 			sourceTree = "<group>";
 		};
 		D0A4F1C2177A8E6300D1A742 /* Products */ = {
@@ -1136,6 +1154,7 @@
 				D0AC12BE17952F6D00893798 /* tabbar_round.png in Resources */,
 				D0AC12BF17952F6D00893798 /* tabbar_round@2x.png in Resources */,
 				D0DFDD7317A39F540038EDE9 /* BPushConfig.plist in Resources */,
+				D0A443C517CEF56800A569F0 /* WPFindPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,6 +1196,7 @@
 				D0A3F74F178FF17900BC3D89 /* WPLoginViewController.m in Sources */,
 				D0A3F77A178FF8CD00BC3D89 /* WPRegistViewController.m in Sources */,
 				D0DFDD6D17A39ECB0038EDE9 /* JSONKit.m in Sources */,
+				D0A443C417CEF56800A569F0 /* WPFindPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

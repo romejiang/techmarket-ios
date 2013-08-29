@@ -41,7 +41,7 @@ FOUNDATION_EXPORT void NSWarn(NSString *format, ...)
 
 #ifdef DEBUG
     
-    assert(false);
+//    assert(false);
     
 #endif
     
