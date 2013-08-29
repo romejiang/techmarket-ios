@@ -557,6 +557,7 @@
     if ([BPushRequestMethod_Bind isEqualToString:method])
     {
         NSDictionary* res = [[NSDictionary alloc] initWithDictionary:data];
+        
 //        NSString *appid = [res valueForKey:BPushRequestAppIdKey];
 //        NSString *userid = [res valueForKey:BPushRequestUserIdKey];
 //        NSString *channelid = [res valueForKey:BPushRequestChannelIdKey];
