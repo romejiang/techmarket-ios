@@ -12,6 +12,4 @@
 @interface WPRegistViewController : UIViewController
 
 
-
-
 @end
