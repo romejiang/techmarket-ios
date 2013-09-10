@@ -53,7 +53,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setUi_textField:nil];
     [self setUi_buttonFindPassword:nil];
     [self setUi_buttonBack:nil];
@@ -141,7 +142,7 @@
     NSString *stringUrl = @"http://market.xayoudao.com/apiproxy.php?action=backPassword";
     
     __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:stringUrl]];
-    
+     
     _asiHttpRequest = request;
     
     [request setRequestMethod:@"POST"];

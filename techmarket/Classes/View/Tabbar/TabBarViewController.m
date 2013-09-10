@@ -88,7 +88,7 @@
     
     [self.view addSubview:_customView];
     
-    [self _showLoginView];
+//    [self _showLoginView];
     
     [self _showHelpView];
     
