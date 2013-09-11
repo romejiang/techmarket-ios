@@ -23,5 +23,4 @@
 
 -(void)setDelegate:(id<WpLoginViewDelegate>)_delegate;
 
-
 @end

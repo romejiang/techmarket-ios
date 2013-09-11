@@ -94,6 +94,8 @@
 		D03AB6021705315C00481530 /* CDVShare.m in Sources */ = {isa = PBXBuildFile; fileRef = D03AB5FC1705315C00481530 /* CDVShare.m */; };
 		D03AB65717055AA700481530 /* CDVSingletonEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = D03AB65517055AA700481530 /* CDVSingletonEventStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D03AB65817055AA700481530 /* CDVSingletonEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D03AB65617055AA700481530 /* CDVSingletonEventStore.m */; };
+		D068F56C17DF010C003B9384 /* CDVMemoryCard.h in Headers */ = {isa = PBXBuildFile; fileRef = D068F56A17DF010C003B9384 /* CDVMemoryCard.h */; };
+		D068F56D17DF010C003B9384 /* CDVMemoryCard.m in Sources */ = {isa = PBXBuildFile; fileRef = D068F56B17DF010C003B9384 /* CDVMemoryCard.m */; };
 		D08B438B1712601500DD791B /* CDVCheckVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B43891712601500DD791B /* CDVCheckVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D08B438C1712601500DD791B /* CDVCheckVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B438A1712601500DD791B /* CDVCheckVersion.m */; };
 		D0992171171FC67C009A41D4 /* libOpenUDID.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A7BA58171F91AF006E0DA5 /* libOpenUDID.a */; };
@@ -276,6 +278,8 @@
 		D03AB64A17055A0400481530 /* NSLog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NSLog.xcodeproj; path = ../techmarket/Libs/NSLog/NSLog.xcodeproj; sourceTree = "<group>"; };
 		D03AB65517055AA700481530 /* CDVSingletonEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSingletonEventStore.h; path = Classes/CDVSingletonEventStore.h; sourceTree = "<group>"; };
 		D03AB65617055AA700481530 /* CDVSingletonEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSingletonEventStore.m; path = Classes/CDVSingletonEventStore.m; sourceTree = "<group>"; };
+		D068F56A17DF010C003B9384 /* CDVMemoryCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVMemoryCard.h; path = Classes/CDVMemoryCard.h; sourceTree = "<group>"; };
+		D068F56B17DF010C003B9384 /* CDVMemoryCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVMemoryCard.m; path = Classes/CDVMemoryCard.m; sourceTree = "<group>"; };
 		D08B43891712601500DD791B /* CDVCheckVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCheckVersion.h; path = Classes/CDVCheckVersion.h; sourceTree = "<group>"; };
 		D08B438A1712601500DD791B /* CDVCheckVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVCheckVersion.m; path = Classes/CDVCheckVersion.m; sourceTree = "<group>"; };
 		D099215B171FBA93009A41D4 /* CDVGetUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVGetUUID.h; path = Classes/CDVGetUUID.h; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 		888700D710922F56009987E8 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				D068F56A17DF010C003B9384 /* CDVMemoryCard.h */,
+				D068F56B17DF010C003B9384 /* CDVMemoryCard.m */,
 				D099215B171FBA93009A41D4 /* CDVGetUUID.h */,
 				D099215C171FBA93009A41D4 /* CDVGetUUID.m */,
 				D0396E221721299A007A5C00 /* CDVFullScreen.h */,
@@ -601,6 +607,7 @@
 				0FA8C6ED172D1A5A000F628F /* CDVMessages.h in Headers */,
 				0F9FC4D01746278E00EB52E7 /* CDVRedirect.h in Headers */,
 				D0D5D54C1754866800F099C5 /* CDVGetApplicationInfo.h in Headers */,
+				D068F56C17DF010C003B9384 /* CDVMemoryCard.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +767,7 @@
 				0FA8C6EE172D1A5A000F628F /* CDVMessages.m in Sources */,
 				0F9FC4D11746278E00EB52E7 /* CDVRedirect.m in Sources */,
 				D0D5D54D1754866800F099C5 /* CDVGetApplicationInfo.m in Sources */,
+				D068F56D17DF010C003B9384 /* CDVMemoryCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

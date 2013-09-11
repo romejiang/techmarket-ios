@@ -14,15 +14,11 @@
 
 #import "WPFindPasswordViewController.h"
 
+#import "WPRegistViewController.h"
+
 #import "WPNetKey.h"
 
 #define KUILoginViewController_ScrollViewOffset     180
-
-#define KUILoginViewController_Password             @"password"
-
-#define KUILoginViewController_UserName             @"userName"
-
-
 
 @interface WPLoginViewController ()<UITextFieldDelegate>
 
@@ -58,8 +54,7 @@
     [super viewDidLoad];
     
     [self _addListenKeyBoard];
-    
-    [self.userName becomeFirstResponder];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -176,9 +171,9 @@
     
     [request setRequestMethod:@"POST"];
     
-    [request setPostValue:paramUserName forKey:KUILoginViewController_UserName];
+    [request setPostValue:paramUserName forKey:WPNetKeyLogin_UserCode];
     
-    [request setPostValue:paramPassWord forKey:KUILoginViewController_Password];
+    [request setPostValue:paramPassWord forKey:WPNetKeyLogin_UserPwd];
     
     [request setCompletionBlock:^{
         
@@ -206,17 +201,15 @@
             if ([strNetKeyCode intValue] == 0)
             {
                 [KGStatusBar showSuccessWithStatus:@"登陆成功"];
-                
-                [self dismissModalViewControllerAnimated:YES];
+
+                [self.view removeFromSuperview];
             }
-            
             else
             {
                 NSString *strNetMessage = [dicApp objectForKey:WPNetKeyMessage];
                 
                 [self _alertViewWithTitle:@"登录失败"
                               withMessage:strNetMessage];
-                
             }
             
             [self.loginDelegate delegateWithLoginSuccess];
@@ -333,6 +326,10 @@
 
 - (IBAction)onRegist:(id)sender
 {
+    WPRegistViewController *registView = [[WPRegistViewController alloc]initWithNibName:@"WPRegistViewController"
+                                                                                 bundle:nil];
+    [self presentModalViewController:registView animated:YES];
+    
     [self.loginDelegate delegateWithRegist];
 }
 
