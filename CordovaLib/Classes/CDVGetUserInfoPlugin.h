@@ -15,5 +15,7 @@
 @interface CDVGetUserInfoPlugin : CDVPlugin
 
 -(void)getuserinfo:(CDVInvokedUrlCommand*)command;
+-(void)deleteUserInfo:(CDVInvokedUrlCommand*)command;
+-(void)getuserinfoWithParam:(CDVInvokedUrlCommand*)command;
 
 @end

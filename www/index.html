@@ -214,7 +214,34 @@
             
             
             }
-             
+            
+            function getUserInfo()
+            {
+                   cordova.exec(function(winParam) {
+                             
+                             alert(winParam)
+                             },
+                             function(error) {
+                             },
+                             "GetUserInfoPlugin",
+                             "getuserinfo",
+                             ["zhao"]);
+            
+            }
+            
+            function deleteUserInfo()
+            {
+                      cordova.exec(function(winParam) {
+                             
+                             alert(winParam)
+                             },
+                             function(error) {
+                             },
+                             "GetUserInfoPlugin",
+                             "deleteUserInfo",
+                             ["zhao"]);            
+            }
+            
             document.addEventListener('deviceready', function() {
                                       app.initialize();
                                       navigator.splashscreen.hide();
@@ -227,6 +254,8 @@
         <input type="button"value="非全屏"style="width:100px;height:22px;"onclick="NofullScreen();" />
         <input type="button"value="是否全屏"style="width:100px;height:22px;"onclick="whetherIsFullScreen();" />
         <input type="button"value="加入提醒"style="width:100px;height:22px;"onclick="addAlarmClock();" />
+        <input type="button"value="删除用户信息"style="width:100px;height:22px;"onclick="deleteUserInfo();" />
+        <input type="button"value="获取用户信息"style="width:100px;height:22px;"onclick="getUserInfo();" />
         <input type="button"value="删除提醒"style="width:100px;height:22px;"onclick="deleteManyAlarmClock();" />
         <input type="button"value="修改提醒"style="width:100px;height:22px;"onclick="modifyAlarmClock();" />
         <input type="button"value="查询提醒"style="width:100px;height:22px;"onclick="searchAlarmClock();" />

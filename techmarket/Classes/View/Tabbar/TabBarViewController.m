@@ -84,8 +84,6 @@
     
     [UIApplication sharedApplication].statusBarHidden = NO;
     
-     [self touchBtnAtIndex:0];
-    
     //customView init
     _customView = [[UIView alloc]init];
     
@@ -113,6 +111,8 @@
     
     //监听登陆结果
     [self _addObserverLoginResult];
+    
+    [self touchBtnAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -364,13 +364,13 @@
 
 -(void)_observerKeyLoginSuccess:(NSNotification*)_notificationInfo
 {
-    [self touchBtnAtIndex:3];    
+    
 }
 
 
 -(void)_observerKeyLoginFail:(NSNotification*)_notification
 {
-
+   
 }
 
 

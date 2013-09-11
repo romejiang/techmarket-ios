@@ -65,6 +65,7 @@
         <plugin name="Messages" value="CDVMessages"/>
         <plugin name="Redirect" value="CDVRedirect"/>
         <plugin name="GetApplicationInfo" value ="CDVGetApplicationInfo"/>
+        <plugin name="GetUserInfoPlugin" value ="CDVGetUserInfoPlugin"/>
         
     </plugins>
 
