@@ -4,107 +4,42 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
-         timestampString = "400561662.938597"
+         filePath = "techmarket/Classes/AppDelegate.m"
+         timestampString = "400571242.861093"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "235"
-         endingLineNumber = "235"
-         landmarkName = "@implementation WPLoginViewController"
-         landmarkType = "3">
+         startingLineNumber = "578"
+         endingLineNumber = "578"
+         landmarkName = "-onMethod:response:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "techmarket/Classes/View/Login/WPRegistViewController.m"
-         timestampString = "400560447.721347"
+         timestampString = "400580167.772087"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-viewDidUnload"
+         startingLineNumber = "278"
+         endingLineNumber = "278"
+         landmarkName = "-textFieldShouldReturn:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
-         timestampString = "400561539.24958"
+         filePath = "techmarket/Classes/View/Login/WPRegistViewController.m"
+         timestampString = "400580167.772087"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "196"
-         endingLineNumber = "196"
-         landmarkName = "-_netserviceUserLoginWithUserName:andPassword:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
-         timestampString = "400561539.24958"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "167"
-         endingLineNumber = "167"
-         landmarkName = "-_netserviceUserLoginWithUserName:andPassword:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
-         timestampString = "400561539.24958"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "172"
-         endingLineNumber = "172"
-         landmarkName = "-_netserviceUserLoginWithUserName:andPassword:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
-         timestampString = "400561539.24958"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "184"
-         endingLineNumber = "184"
-         landmarkName = "-_netserviceUserLoginWithUserName:andPassword:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
-         timestampString = "400561662.938597"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "211"
-         endingLineNumber = "211"
-         landmarkName = "-_netserviceUserLoginWithUserName:andPassword:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/FindPassword/WPFindPasswordViewController.m"
-         timestampString = "399455979.705913"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
-         landmarkName = "-_netserviceUserLoginWithFindType:andFindNumber:"
+         startingLineNumber = "272"
+         endingLineNumber = "272"
+         landmarkName = "-textFieldShouldReturn:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

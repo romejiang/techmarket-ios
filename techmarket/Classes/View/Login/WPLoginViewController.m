@@ -18,27 +18,29 @@
 
 #import "WPNetKey.h"
 
+#import "Setting.h"
+
+
 #define KUILoginViewController_ScrollViewOffset     180
 
 @interface WPLoginViewController ()<UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *userName;
-@property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak, nonatomic) IBOutlet UIScrollView *ui_scrollView;
-@property (unsafe_unretained,nonatomic)id<WpLoginViewDelegate> loginDelegate;
 @property (strong, nonatomic) ASIHTTPRequest *asiHttpRequest;
 
+@property (strong, nonatomic) NSUserDefaults *userDefault;
 
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+
+@property (weak, nonatomic) IBOutlet UITextField *password;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *ui_scrollView;
+
+@property (weak, nonatomic) IBOutlet UIButton *ui_buttonShowPassword;
 
 @end
 
 @implementation WPLoginViewController
 
-
--(void)setDelegate:(id<WpLoginViewDelegate>)_delegate
-{
-    self.loginDelegate =_delegate;
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,14 +56,17 @@
     [super viewDidLoad];
     
     [self _addListenKeyBoard];
+    
+    _userDefault = [NSUserDefaults standardUserDefaults];
+    
+    _ui_buttonShowPassword.selected = NO;
 
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 
@@ -70,10 +75,16 @@
     
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setUserName:nil];
+    
     [self setPassword:nil];
+    
     [self setUi_scrollView:nil];
+    
+    [self setUi_buttonShowPassword:nil];
+    
     [super viewDidUnload];
 }
 
@@ -149,6 +160,14 @@
     [alert show];
 }
 
+-(void)_storeInMemoryWithLoginDictionary:(NSDictionary*)paramLoginDictionary
+{
+    [_userDefault setObject:paramLoginDictionary forKey:UserDefaultData];
+    
+    NSLog(@"%@",[_userDefault objectForKey:UserDefaultData]);
+
+}
+
 /**************************************************************************************/
 
 
@@ -175,6 +194,10 @@
     
     [request setPostValue:paramPassWord forKey:WPNetKeyLogin_UserPwd];
     
+    NSString *udid = [_userDefault objectForKey:WPNetkeyUserId];
+    
+    [request setPostValue:udid forKey:WPNetkeyUserId];
+        
     [request setCompletionBlock:^{
         
         NSError *error = nil;
@@ -194,15 +217,21 @@
         }
         else
         {
-            NSLog(@"%@",dicApp);
+            NSDictionary *dicApplication = [dicApp objectForKey:WPNetKeyRoot];
             
-            NSString *strNetKeyCode = [dicApp objectForKey:WPNetKeyCode];
+            NSString *strNetKeyCode = [dicApplication objectForKey:WPNetKeyCode];
             
             if ([strNetKeyCode intValue] == 0)
             {
                 [KGStatusBar showSuccessWithStatus:@"登陆成功"];
-
-                [self.view removeFromSuperview];
+                
+                NSDictionary *userDefaultData = [dicApplication objectForKey:WPNetKeyLogin_Data ];
+                
+                [self _storeInMemoryWithLoginDictionary:userDefaultData];
+                
+                [[NSNotificationCenter defaultCenter]postNotificationName:KUILoginViewController_LoginSuccess object:nil];
+                
+                [self dismissModalViewControllerAnimated:YES];
             }
             else
             {
@@ -211,12 +240,7 @@
                 [self _alertViewWithTitle:@"登录失败"
                               withMessage:strNetMessage];
             }
-            
-            [self.loginDelegate delegateWithLoginSuccess];
         }
-        
-        
-        
     }];
     
     [request  setFailedBlock:^{
@@ -272,13 +296,25 @@
 	{
 		//在锁定模式下 不可更换密码样式 所以：
         [self.password resignFirstResponder];
+        
         self.password.secureTextEntry	=	!self.password.secureTextEntry;
+        
         [self.password becomeFirstResponder];
  	}
 	else
 	{
         self.password.secureTextEntry	=	!self.password.secureTextEntry;
 	}
+    
+    //buttton状态
+    if(_ui_buttonShowPassword.selected == YES)
+    {
+        _ui_buttonShowPassword.selected = NO;
+    }
+    else
+    {
+        _ui_buttonShowPassword.selected = YES;
+    }
 	
 	[self _addListenKeyBoard];
 }
@@ -286,7 +322,6 @@
 
 - (IBAction)onFind:(id)sender
 {
-    
     WPFindPasswordViewController *findPassWord = [[WPFindPasswordViewController alloc]initWithNibName:@"WPFindPasswordViewController"
                                                                                                bundle:nil];
     
@@ -297,6 +332,7 @@
 
 - (IBAction)onLogin:(id)sender
 {
+    //用户名
     if ([self.userName.text length]<  2 || [self.userName.text length] >10 )
 	{
 		if ([self.userName.text length] == 0)
@@ -306,6 +342,8 @@
 		}
         [self _alertViewWithTitle:@"信息" withMessage:@"用户名在2-10字数之间"];
 	}
+    
+    //密码
     else if ([self.password.text length]<  5 || [self.password.text length] >10 )
     {
         if ([self.password.text length] == 0)
@@ -315,11 +353,12 @@
         }
         [self _alertViewWithTitle:@"信息" withMessage:@"密码在5-10字数之间"];
     }
+    
+    //网络
     else
     {
         [self _netserviceUserLoginWithUserName:self.userName.text
                                    andPassword:self.password.text];
-        
     }
 }
 
@@ -330,7 +369,13 @@
                                                                                  bundle:nil];
     [self presentModalViewController:registView animated:YES];
     
-    [self.loginDelegate delegateWithRegist];
+}
+
+
+- (IBAction)onBack:(id)sender
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:KUILoginViewController_LoginFail object:nil];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 

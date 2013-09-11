@@ -8,19 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define KUILoginViewController_LoginSuccess    @"loginSuccess"
 
-@protocol WpLoginViewDelegate <NSObject>
-
-@optional
-
--(void)delegateWithRegist;
--(void)delegateWithLogin;
--(void)delegateWithLoginSuccess;
-
-@end
+#define KUILoginViewController_LoginFail       @"loginFail"
 
 @interface WPLoginViewController : UIViewController
 
--(void)setDelegate:(id<WpLoginViewDelegate>)_delegate;
 
 @end

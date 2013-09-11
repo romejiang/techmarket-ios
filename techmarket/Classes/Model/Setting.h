@@ -19,5 +19,7 @@
     #define API_DOMAIN @"http://115.28.36.217"
 #endif
 
+#define UserDefaultData @"userDefaultData"
+
 #endif
 

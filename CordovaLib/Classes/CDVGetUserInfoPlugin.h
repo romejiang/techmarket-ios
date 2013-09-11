@@ -12,6 +12,8 @@
 #import <NSLog/NSLog.h>
 
 
-@interface CDVMemoryCard : CDVPlugin
+@interface CDVGetUserInfoPlugin : CDVPlugin
+
+-(void)getuserinfo:(CDVInvokedUrlCommand*)command;
 
 @end

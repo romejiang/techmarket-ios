@@ -151,9 +151,9 @@
 							<object class="IBUIButton" id="147753760">
 								<reference key="NSNextResponder" ref="416790466"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{37, 321}, {117, 22}}</string>
+								<string key="NSFrame">{{33, 318}, {125, 25}}</string>
 								<reference key="NSSuperview" ref="416790466"/>
-								<reference key="NSNextKeyView" ref="811802080"/>
+								<reference key="NSNextKeyView" ref="266838886"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
@@ -162,8 +162,6 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<int key="IBUIButtonType">1</int>
-								<bool key="IBUIShowsTouchWhenHighlighted">YES</bool>
 								<string key="IBUINormalTitle">show</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor" id="46986864">
 									<int key="NSColorSpace">3</int>
@@ -177,6 +175,14 @@
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
 								</object>
+								<object class="NSCustomResource" key="IBUISelectedImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">wplogin_hidepassword.png</string>
+								</object>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">wplogin_showpassword.png</string>
+								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="237069668">
 									<int key="type">2</int>
 									<double key="pointSize">15</double>
@@ -187,65 +193,12 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
-							<object class="IBUIButton" id="811802080">
-								<reference key="NSNextResponder" ref="416790466"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{180, 321}, {73, 22}}</string>
-								<reference key="NSSuperview" ref="416790466"/>
-								<reference key="NSNextKeyView" ref="1050547916"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIContentHorizontalAlignment">0</int>
-								<int key="IBUIContentVerticalAlignment">0</int>
-								<int key="IBUIButtonType">1</int>
-								<string key="IBUINormalTitle">find</string>
-								<reference key="IBUIHighlightedTitleColor" ref="46986864"/>
-								<object class="NSColor" key="IBUINormalTitleColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-								</object>
-								<reference key="IBUINormalTitleShadowColor" ref="219785249"/>
-								<reference key="IBUIFontDescription" ref="237069668"/>
-								<reference key="IBUIFont" ref="23883412"/>
-							</object>
-							<object class="IBUIButton" id="1050547916">
-								<reference key="NSNextResponder" ref="416790466"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 378}, {134, 45}}</string>
-								<reference key="NSSuperview" ref="416790466"/>
-								<reference key="NSNextKeyView" ref="446139242"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
-									<string type="base64-UTF8" key="IBUIAccessibilityLabel">IA</string>
-								</object>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIContentHorizontalAlignment">0</int>
-								<int key="IBUIContentVerticalAlignment">0</int>
-								<string key="IBUINormalTitle">login</string>
-								<reference key="IBUIHighlightedTitleColor" ref="46986864"/>
-								<object class="NSColor" key="IBUINormalTitleColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-								</object>
-								<reference key="IBUINormalTitleShadowColor" ref="219785249"/>
-								<object class="NSCustomResource" key="IBUIHighlightedImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">wplogin_login_down.png</string>
-								</object>
-								<object class="NSCustomResource" key="IBUINormalImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">wplogin_login.png</string>
-								</object>
-								<reference key="IBUIFontDescription" ref="237069668"/>
-								<reference key="IBUIFont" ref="23883412"/>
-							</object>
 							<object class="IBUIButton" id="446139242">
 								<reference key="NSNextResponder" ref="416790466"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{166, 378}, {134, 45}}</string>
+								<string key="NSFrame">{{28, 410}, {134, 45}}</string>
 								<reference key="NSSuperview" ref="416790466"/>
+								<reference key="NSNextKeyView" ref="455505068"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -258,13 +211,73 @@
 									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="219785249"/>
-								<object class="NSCustomResource" key="IBUIHighlightedImage">
+								<object class="NSCustomResource" key="IBUIHighlightedImage" id="506973873">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">wplogin_regist_down.png</string>
 								</object>
+								<reference key="IBUISelectedImage" ref="506973873"/>
 								<object class="NSCustomResource" key="IBUINormalImage">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">wplogin_regist.png</string>
+								</object>
+								<reference key="IBUIFontDescription" ref="237069668"/>
+								<reference key="IBUIFont" ref="23883412"/>
+							</object>
+							<object class="IBUIButton" id="455505068">
+								<reference key="NSNextResponder" ref="416790466"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{166, 410}, {134, 45}}</string>
+								<reference key="NSSuperview" ref="416790466"/>
+								<reference key="NSNextKeyView"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIContentHorizontalAlignment">0</int>
+								<int key="IBUIContentVerticalAlignment">0</int>
+								<string key="IBUINormalTitle">返回</string>
+								<reference key="IBUIHighlightedTitleColor" ref="46986864"/>
+								<object class="NSColor" key="IBUINormalTitleColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+								</object>
+								<reference key="IBUINormalTitleShadowColor" ref="219785249"/>
+								<object class="NSCustomResource" key="IBUIHighlightedImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">wplogin_login_cancel_down.png</string>
+								</object>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">wplogin_login_cancel.png</string>
+								</object>
+								<reference key="IBUIFontDescription" ref="237069668"/>
+								<reference key="IBUIFont" ref="23883412"/>
+							</object>
+							<object class="IBUIButton" id="266838886">
+								<reference key="NSNextResponder" ref="416790466"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{26, 357}, {270, 43}}</string>
+								<reference key="NSSuperview" ref="416790466"/>
+								<reference key="NSNextKeyView" ref="446139242"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIContentHorizontalAlignment">0</int>
+								<int key="IBUIContentVerticalAlignment">0</int>
+								<string key="IBUINormalTitle">Button</string>
+								<reference key="IBUIHighlightedTitleColor" ref="46986864"/>
+								<object class="NSColor" key="IBUINormalTitleColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+								</object>
+								<reference key="IBUINormalTitleShadowColor" ref="219785249"/>
+								<object class="NSCustomResource" key="IBUIHighlightedImage" id="445899118">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">wplogin_login_down.png</string>
+								</object>
+								<reference key="IBUISelectedImage" ref="445899118"/>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">wplogin_login.png</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="237069668"/>
 								<reference key="IBUIFont" ref="23883412"/>
@@ -344,6 +357,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">ui_buttonShowPassword</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="147753760"/>
+					</object>
+					<int key="connectionID">35</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="579746566"/>
 						<reference key="destination" ref="372490531"/>
@@ -369,30 +390,21 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">onFind:</string>
-						<reference key="source" ref="811802080"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">19</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">onLogin:</string>
-						<reference key="source" ref="1050547916"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">29</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">onRegist:</string>
 						<reference key="source" ref="446139242"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">21</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">onBack:</string>
+						<reference key="source" ref="455505068"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">37</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -431,10 +443,10 @@
 							<reference ref="579746566"/>
 							<reference ref="885038154"/>
 							<reference ref="147753760"/>
-							<reference ref="811802080"/>
-							<reference ref="1050547916"/>
-							<reference ref="446139242"/>
 							<reference ref="993939661"/>
+							<reference ref="446139242"/>
+							<reference ref="455505068"/>
+							<reference ref="266838886"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -455,18 +467,6 @@
 						<reference key="object" ref="147753760"/>
 						<reference key="parent" ref="416790466"/>
 						<string key="objectName">Button-showPassword</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">12</int>
-						<reference key="object" ref="811802080"/>
-						<reference key="parent" ref="416790466"/>
-						<string key="objectName">Button-FindPassword</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">13</int>
-						<reference key="object" ref="1050547916"/>
-						<reference key="parent" ref="416790466"/>
-						<string key="objectName">Button-Login</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
@@ -491,6 +491,16 @@
 						<reference key="object" ref="396867795"/>
 						<reference key="parent" ref="416790466"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">36</int>
+						<reference key="object" ref="455505068"/>
+						<reference key="parent" ref="416790466"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">38</int>
+						<reference key="object" ref="266838886"/>
+						<reference key="parent" ref="416790466"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -501,14 +511,16 @@
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="13.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="2" key="11.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="14.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="1" key="36.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="0.0" key="38.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -516,7 +528,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
@@ -526,11 +538,15 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="background-568.png">{640, 1096}</string>
 			<string key="background_image_icon.png">{280, 112}</string>
+			<string key="wplogin_hidepassword.png">{126, 25}</string>
 			<string key="wplogin_logbar.png">{267, 128}</string>
-			<string key="wplogin_login.png">{134, 45}</string>
-			<string key="wplogin_login_down.png">{134, 45}</string>
+			<string key="wplogin_login.png">{270, 43}</string>
+			<string key="wplogin_login_cancel.png">{134, 45}</string>
+			<string key="wplogin_login_cancel_down.png">{134, 45}</string>
+			<string key="wplogin_login_down.png">{270, 43}</string>
 			<string key="wplogin_regist.png">{134, 45}</string>
 			<string key="wplogin_regist_down.png">{134, 45}</string>
+			<string key="wplogin_showpassword.png">{126, 25}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

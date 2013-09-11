@@ -26,7 +26,9 @@
 //
 
 #import "AppDelegate.h"
+
 #import "MainViewController.h"
+
 #import "Setting.h"
 
 #import <Cordova/CDVPlugin.h>
@@ -34,20 +36,27 @@
 #import <OpenUDID/OpenUDIDD.h>
 
 #import <ApplicationInfo/ApplicationInfo.h>
+
 #import <CoreLocation/CoreLocation.h>
 
 #import "MobClick.h"
+
 #import "WPHelpView.h"
+
 #import "UMSocialData.h"
+
 #import "WXApi.h"
-//#import "ASIFormDataRequest.h"
+
 #import <ApplicationUnity/ASIFormDataRequest.h>
+
 #import "UMSocial.h"
 
 // log
 #import <NSLog/NSLog.h>
 
 #import "TabBarViewController.h"
+
+#import "WPNetKey.h"
 
 #define NewVersionForCurrentRun @"isnewversionforcurrentrun"
 
@@ -559,7 +568,12 @@
         NSDictionary* res = [[NSDictionary alloc] initWithDictionary:data];
         
 //        NSString *appid = [res valueForKey:BPushRequestAppIdKey];
-//        NSString *userid = [res valueForKey:BPushRequestUserIdKey];
+        NSString *userid = [res valueForKey:BPushRequestUserIdKey];
+        
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        
+        [userDefault setObject:userid forKey:WPNetkeyUserId];
+        
 //        NSString *channelid = [res valueForKey:BPushRequestChannelIdKey];
 //        int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
 //        NSString *requestid = [res valueForKey:BPushRequestRequestIdKey];

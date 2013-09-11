@@ -26,8 +26,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *ui_passWord;
 
-@property (weak, nonatomic) IBOutlet UITextField *ui_againPassword;
-
 @property (weak, nonatomic) IBOutlet UIScrollView *ui_scrollView;
 
 @property (strong, nonatomic) ASIHTTPRequest *asiHttpRequest;
@@ -68,7 +66,6 @@
     [self setUi_textFieldUserName:nil];
     [self setUi_textFieldPhone:nil];
     [self setUi_passWord:nil];
-    [self setUi_againPassword:nil];
     [super viewDidUnload];
 }
 
@@ -159,7 +156,6 @@
 -(void)_addListenKeyBoard
 {
     //键盘
-	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(_observerKeyboardWasShown:)
 												 name:UIKeyboardWillShowNotification
@@ -279,15 +275,11 @@
     }
     else if (textField  == self.ui_textFieldPhone)
     {
-        [self.ui_passWord becomeFirstResponder];
-    }
-    else if (textField == self.ui_passWord)
-    {
-        [self.ui_againPassword becomeFirstResponder];
+        [self.ui_textFieldEmail becomeFirstResponder];
     }
     else
     {
-        [self.ui_againPassword resignFirstResponder];
+        [self.ui_passWord becomeFirstResponder ];
     }
 
 return (YES);
@@ -351,13 +343,6 @@ return (YES);
         [self _alertViewWithTitle:@"信息" withMessage:@"密码在6-15字数之间"];
 	}
     
-    //确认密码
-    else if (![self.ui_passWord.text isEqualToString:self.ui_againPassword.text])
-	{
-
-        [self _alertViewWithTitle:@"信息" withMessage:@"确认密码必须与密码相同"];
-	}
-    
     //网络
     else
     {
@@ -365,7 +350,6 @@ return (YES);
                                     andUserPwd:self.ui_passWord.text
                                        andEmai:self.ui_textFieldEmail.text
                                       andMobil:self.ui_textFieldPhone.text];
-       
     }
 }
 

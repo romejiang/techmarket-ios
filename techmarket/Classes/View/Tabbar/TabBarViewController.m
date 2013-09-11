@@ -8,6 +8,7 @@
 
 
 #define kTabBarHeight								57
+#import "Setting.h"
 
 #import <QuartzCore/QuartzCore.h>
 #import <Cordova/CDVViewController.h>
@@ -24,7 +25,7 @@
 
 #define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
-@interface TabBarViewController ()<tabbarDelegate,WPHelpViewDelegate,WpLoginViewDelegate>
+@interface TabBarViewController ()<tabbarDelegate,WPHelpViewDelegate>
 
 
 @property (strong, nonatomic)WPHelpView*        helpView;
@@ -83,18 +84,17 @@
     
     [UIApplication sharedApplication].statusBarHidden = NO;
     
+     [self touchBtnAtIndex:0];
+    
     //customView init
     _customView = [[UIView alloc]init];
     
     [self.view addSubview:_customView];
-    
-    [self _showLoginView];
-    
+        
     [self _showHelpView];
     
     [self debugStart];
     
-       
     //tabBarView init
     _tabBarView = [[TabbarView alloc]init];
     
@@ -110,7 +110,9 @@
         viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
         
     }
-    [self touchBtnAtIndex:0];
+    
+    //监听登陆结果
+    [self _addObserverLoginResult];
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,7 +135,6 @@
     
     height = sizeDevice.height;
 
-
     CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     
     _customView.frame = CGRectMake(0, 0, width, height);
@@ -154,6 +155,10 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+-(void)viewDidUnload
+{
+    [self _removeObserverLoginResult];
+}
 
 /**************************************************************************************/
 
@@ -165,6 +170,16 @@
 
 -(void)touchBtnAtIndex:(NSInteger)index
 {
+    if (index == 3)
+    {
+        if (![[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData])
+        {
+            [self _showLoginView];
+            return;
+            
+        }
+    }
+    
     //根据用户点击tabbar控制View显示和隐藏
     for (UIViewController *viewController in _arrayViewController)
     {
@@ -205,34 +220,6 @@
     [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
-
-/**************************************************************************************/
-
-#pragma mark -
-#pragma mark WpLoginViewDelegate
-#pragma mark -
-
-/**************************************************************************************/
-
--(void)delegateWithRegist
-{
-    
-//    [UIView transitionFromView:<#(UIView *)#> toView:<#(UIView *)#> duration:<#(NSTimeInterval)#> options:<#(UIViewAnimationOptions)#> completion:<#^(BOOL finished)completion#>]
-
-
-}
-
--(void)delegateWithLogin
-{
-
-
-}
--(void)delegateWithLoginSuccess
-{
-   
-
-
-}
 
 
 /**************************************************************************************/
@@ -275,9 +262,8 @@
 -(void)_showLoginView
 {
     self.loginView = [[WPLoginViewController alloc]initWithNibName:@"WPLoginViewController" bundle:nil];
-    [self.loginView setDelegate:self];
-    [self.view addSubview:self.loginView.view];
-
+    
+    [self presentModalViewController:self.loginView animated:YES];
 }
 
 
@@ -344,19 +330,48 @@
     NSInfo(@"显示帮助信息结束");
 }
 
-///*
-// 显示SplashView
-// */
+/*
+ 添加监听
+ */
 
-//-(void)showSplashView
-//{
-//    WPSplashView *splash = [[WPSplashView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//
-//    //根据图片调整frame
-//    [splash setFrame:[splash boundsSize]];
-//    
-//    [self.view addSubview:splash];
-//}
+-(void)_addObserverLoginResult
+{
+  [[NSNotificationCenter defaultCenter]addObserver:self
+                                          selector:@selector(_observerKeyLoginSuccess:)
+                                              name:KUILoginViewController_LoginSuccess
+                                            object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(_observerKeyLoginFail:)
+                                                name:KUILoginViewController_LoginFail
+                                              object:nil];
+
+}
+
+/*
+移除监听
+ */
+
+-(void)_removeObserverLoginResult
+{
+ [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                name:KUILoginViewController_LoginSuccess
+                                              object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:KUILoginViewController_LoginFail
+                                                 object:nil];
+
+}
+
+-(void)_observerKeyLoginSuccess:(NSNotification*)_notificationInfo
+{
+    [self touchBtnAtIndex:3];    
+}
+
+
+-(void)_observerKeyLoginFail:(NSNotification*)_notification
+{
+
+}
 
 
 @end
