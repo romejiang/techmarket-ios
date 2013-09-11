@@ -17,14 +17,8 @@
 
 @interface TabbarView : UIView
 
-//@property(nonatomic,strong) UIImageView *tabbarView;
-//@property(nonatomic,strong) UIImageView *tabbarViewCenter;
-//@property(nonatomic,strong) UIButton *button_1;
-//@property(nonatomic,strong) UIButton *button_2;
-//@property(nonatomic,strong) UIButton *button_3;
-//@property(nonatomic,strong) UIButton *button_4;
-//@property(nonatomic,strong) UIButton *button_center;
 @property(nonatomic,weak) id<tabbarDelegate> delegate;
 
+-(void)tapButtonIndex:(NSInteger)index;
 
 @end

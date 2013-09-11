@@ -136,37 +136,18 @@
 -(void)btn1Click:(id)sender
 {
      UIButton *btn = (UIButton *)sender;
-    switch (btn.tag) {
-        case 0:
-        {
-            [self.delegate touchBtnAtIndex:0];
-                break;
-        }
-        case 1:
-        {
-            [self.delegate touchBtnAtIndex:1];
-            break;
-        }
-        case 2:
-        {
-            [self.delegate touchBtnAtIndex:2];
-            break;
-        }
-        case 3:
-          
-            [self.delegate touchBtnAtIndex:3];
-            break;
-        case 4:
-          
-            
-            [self.delegate touchBtnAtIndex:4];
-            break;
-        default:
-            break;
-    }
-    [self _buttonSelectedwithIndex:btn.tag];
+    
+    [self tapButtonIndex:btn.tag];
 }
 
+
+
+-(void)tapButtonIndex:(NSInteger)index
+{
+    [self.delegate touchBtnAtIndex:index];
+    [self _buttonSelectedwithIndex:index];
+
+}
 
 
 -(void)_buttonSelectedwithIndex:(NSInteger)index

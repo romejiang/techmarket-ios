@@ -176,10 +176,8 @@
         {
             [self _showLoginView];
             return;
-            
-        }
+          }
     }
-    
     //根据用户点击tabbar控制View显示和隐藏
     for (UIViewController *viewController in _arrayViewController)
     {
@@ -364,13 +362,14 @@
 
 -(void)_observerKeyLoginSuccess:(NSNotification*)_notificationInfo
 {
+    [_tabBarView tapButtonIndex:3];
     
 }
 
 
 -(void)_observerKeyLoginFail:(NSNotification*)_notification
 {
-   
+   [_tabBarView tapButtonIndex:0];
 }
 
 
