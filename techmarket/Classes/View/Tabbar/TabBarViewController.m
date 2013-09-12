@@ -235,19 +235,19 @@
     _firstViewController.startPage = @"index.html";
     
     _secondViewController = [CDVViewController new];
-    _secondViewController.wwwFolderName = @"qj";
+    _secondViewController.wwwFolderName = @"market";
     _secondViewController.startPage = @"index.html";
     
     _thirdViewController = [CDVViewController new];
-    _thirdViewController.wwwFolderName = @"mec";
+    _thirdViewController.wwwFolderName = @"innovation";
     _thirdViewController.startPage = @"index.html";
     
     _FourViewController = [CDVViewController new];
-    _FourViewController.wwwFolderName = @"va";
+    _FourViewController.wwwFolderName = @"mine";
     _FourViewController.startPage = @"index.html";
     
     _FiveViewController = [CDVViewController new];
-    _FiveViewController.wwwFolderName = @"yu";
+    _FiveViewController.wwwFolderName = @"more";
     _FiveViewController.startPage =@"index.html";
     
     _arrayViewController = [NSArray arrayWithObjects:_firstViewController,_secondViewController,_thirdViewController,_FourViewController,_FiveViewController, nil];

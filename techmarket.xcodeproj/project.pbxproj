@@ -95,10 +95,8 @@
 		D0A443C417CEF56800A569F0 /* WPFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A443C217CEF56800A569F0 /* WPFindPasswordViewController.m */; };
 		D0A443C517CEF56800A569F0 /* WPFindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A443C317CEF56800A569F0 /* WPFindPasswordViewController.xib */; };
 		D0A4F1D5177A8ED500D1A742 /* libApplicationUnity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A4F1C6177A8E6300D1A742 /* libApplicationUnity.a */; };
-		D0A967E51785568D0002C21B /* mec in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E41785568D0002C21B /* mec */; };
-		D0A967E7178556940002C21B /* qj in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E6178556940002C21B /* qj */; };
-		D0A967E91785569A0002C21B /* va in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E81785569A0002C21B /* va */; };
-		D0A967FB178561FC0002C21B /* yu in Resources */ = {isa = PBXBuildFile; fileRef = D0A967FA178561FC0002C21B /* yu */; };
+		D0A967E7178556940002C21B /* market in Resources */ = {isa = PBXBuildFile; fileRef = D0A967E6178556940002C21B /* market */; };
+		D0A967FB178561FC0002C21B /* mine in Resources */ = {isa = PBXBuildFile; fileRef = D0A967FA178561FC0002C21B /* mine */; };
 		D0AC128517952F4800893798 /* wpregist_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AC127B17952F4800893798 /* wpregist_cancel.png */; };
 		D0AC128617952F4800893798 /* wpregist_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AC127C17952F4800893798 /* wpregist_cancel@2x.png */; };
 		D0AC128717952F4800893798 /* wpregist_cancel_down.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AC127D17952F4800893798 /* wpregist_cancel_down.png */; };
@@ -149,6 +147,8 @@
 		D0B7CF8D1763223500D0DF3A /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF821763223400D0DF3A /* UMSnsAccountViewController.xib */; };
 		D0B7CF8E1763223500D0DF3A /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF831763223400D0DF3A /* UMSShareListController.xib */; };
 		D0B7CF8F1763223500D0DF3A /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */; };
+		D0D59CFD17E151D200DB22F3 /* more in Resources */ = {isa = PBXBuildFile; fileRef = D0D59CFC17E151D200DB22F3 /* more */; };
+		D0D59CFF17E1522C00DB22F3 /* innovation in Resources */ = {isa = PBXBuildFile; fileRef = D0D59CFE17E1522C00DB22F3 /* innovation */; };
 		D0DFDD6D17A39ECB0038EDE9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFDD6B17A39ECB0038EDE9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0DFDD6E17A39ECB0038EDE9 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DFDD6C17A39ECB0038EDE9 /* libBPush.a */; };
 		D0DFDD7317A39F540038EDE9 /* BPushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0DFDD7217A39F540038EDE9 /* BPushConfig.plist */; };
@@ -319,10 +319,8 @@
 		D0A443C317CEF56800A569F0 /* WPFindPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPFindPasswordViewController.xib; sourceTree = "<group>"; };
 		D0A443D017CF122B00A569F0 /* WPNetKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPNetKey.h; sourceTree = "<group>"; };
 		D0A4F1C1177A8E6300D1A742 /* ApplicationUnity.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ApplicationUnity.xcodeproj; path = ApplicationUnity/ApplicationUnity.xcodeproj; sourceTree = "<group>"; };
-		D0A967E41785568D0002C21B /* mec */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mec; sourceTree = "<group>"; };
-		D0A967E6178556940002C21B /* qj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = qj; sourceTree = "<group>"; };
-		D0A967E81785569A0002C21B /* va */ = {isa = PBXFileReference; lastKnownFileType = folder; path = va; sourceTree = "<group>"; };
-		D0A967FA178561FC0002C21B /* yu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = yu; sourceTree = "<group>"; };
+		D0A967E6178556940002C21B /* market */ = {isa = PBXFileReference; lastKnownFileType = folder; path = market; sourceTree = "<group>"; };
+		D0A967FA178561FC0002C21B /* mine */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mine; sourceTree = "<group>"; };
 		D0AC127B17952F4800893798 /* wpregist_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wpregist_cancel.png; sourceTree = "<group>"; };
 		D0AC127C17952F4800893798 /* wpregist_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wpregist_cancel@2x.png"; sourceTree = "<group>"; };
 		D0AC127D17952F4800893798 /* wpregist_cancel_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wpregist_cancel_down.png; sourceTree = "<group>"; };
@@ -386,6 +384,8 @@
 		D0B7CF821763223400D0DF3A /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
 		D0B7CF831763223400D0DF3A /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		D0D59CFC17E151D200DB22F3 /* more */ = {isa = PBXFileReference; lastKnownFileType = folder; path = more; sourceTree = "<group>"; };
+		D0D59CFE17E1522C00DB22F3 /* innovation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = innovation; sourceTree = "<group>"; };
 		D0DFDD6917A39ECB0038EDE9 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		D0DFDD6A17A39ECB0038EDE9 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		D0DFDD6B17A39ECB0038EDE9 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -590,12 +590,12 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				D0A967FA178561FC0002C21B /* yu */,
-				F840E1F0165FE0F500CFE078 /* config.xml */,
+				D0D59CFC17E151D200DB22F3 /* more */,
 				301BF56E109A69640062928A /* www */,
-				D0A967E41785568D0002C21B /* mec */,
-				D0A967E6178556940002C21B /* qj */,
-				D0A967E81785569A0002C21B /* va */,
+				D0A967FA178561FC0002C21B /* mine */,
+				F840E1F0165FE0F500CFE078 /* config.xml */,
+				D0D59CFE17E1522C00DB22F3 /* innovation */,
+				D0A967E6178556940002C21B /* market */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
 				0FF88B301705565C002B6A43 /* Libs */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -1122,10 +1122,8 @@
 				D020C3141782C70F0094A2B8 /* tabbar_mainbtn@2x.png in Resources */,
 				D020C3151782C70F0094A2B8 /* tabbar_mainbtn_bg.png in Resources */,
 				D020C3161782C70F0094A2B8 /* tabbar_mainbtn_bg@2x.png in Resources */,
-				D0A967E51785568D0002C21B /* mec in Resources */,
-				D0A967E7178556940002C21B /* qj in Resources */,
-				D0A967E91785569A0002C21B /* va in Resources */,
-				D0A967FB178561FC0002C21B /* yu in Resources */,
+				D0A967E7178556940002C21B /* market in Resources */,
+				D0A967FB178561FC0002C21B /* mine in Resources */,
 				D0A3F77B178FF8CD00BC3D89 /* WPRegistViewController.xib in Resources */,
 				D65E85EC17935BBE001D1D21 /* WPLoginViewController.xib in Resources */,
 				D0AC128517952F4800893798 /* wpregist_cancel.png in Resources */,
@@ -1187,6 +1185,8 @@
 				D09F9D6317E0614500F96027 /* wplogin_regist_down@2x.png in Resources */,
 				D09F9D6417E0614500F96027 /* wplogin_showpassword.png in Resources */,
 				D09F9D6517E0614500F96027 /* wplogin_showpassword@2x.png in Resources */,
+				D0D59CFD17E151D200DB22F3 /* more in Resources */,
+				D0D59CFF17E1522C00DB22F3 /* innovation in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
