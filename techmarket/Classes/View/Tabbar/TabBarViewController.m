@@ -230,7 +230,7 @@
 -(void)getViewControllers
 {
     _firstViewController = [CDVViewController new];
-    _firstViewController.wwwFolderName = @"www";
+    _firstViewController.wwwFolderName = @"home";
     _firstViewController.startPage = @"index.html";
     
     _secondViewController = [CDVViewController new];
