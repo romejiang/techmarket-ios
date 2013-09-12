@@ -1287,6 +1287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhang Jian (9JVDEG4FPS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1304,6 +1305,7 @@
 					"\"$(SRCROOT)/techmarket/Libs/baiduPush\"",
 				);
 				PRODUCT_NAME = techmarket;
+				PROVISIONING_PROFILE = "1209176C-282C-452E-9C98-5F5340ECCDBE";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WEIXIN_KEY = wx79474d05acb6a73b;
 				YOUMENG_KEY = 508a19a35270155ced00005f;
@@ -1314,6 +1316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhang Jian (9JVDEG4FPS)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "techmarket/techmarket-Prefix.pch";
@@ -1329,6 +1332,7 @@
 					"\"$(SRCROOT)/techmarket/Libs/baiduPush\"",
 				);
 				PRODUCT_NAME = techmarket;
+				PROVISIONING_PROFILE = "1209176C-282C-452E-9C98-5F5340ECCDBE";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WEIXIN_KEY = wx79474d05acb6a73b;
 				YOUMENG_KEY = 508a19a35270155ced00005f;

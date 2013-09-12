@@ -145,7 +145,6 @@
     {
         viewConroller.view.frame = CGRectMake(0, 0, width, height-kTabBarHeight-statusBarHeight+9);
         
-        NSLog(@"viewConroller.view.frame.origin.y = %1.2f",viewConroller.view.frame.origin.y);
     }
 }
 
