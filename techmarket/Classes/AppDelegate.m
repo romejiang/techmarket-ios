@@ -328,19 +328,19 @@
 -(void)application:(UIApplication *)application
        didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    NSString *url = [userInfo objectForKey:@"uri"];
+//    NSString *url = [userInfo objectForKey:@"uri"];
     
-    if (url)
-    {
-        NSString *pathResource =  [[NSBundle mainBundle]pathForResource:@"www/index.html" ofType:nil];
-        
-        NSString* urlResultStr = [NSString stringWithFormat:@"%@%@%@",pathResource,@"?",url];
-        
-        NSURL *urlResultRequest = [NSURL fileURLWithPath:urlResultStr];
-        
-        [self.viewController.webView loadRequest:[NSURLRequest requestWithURL:urlResultRequest]];
-        
-    }
+//    if (url)
+//    {
+//        NSString *pathResource =  [[NSBundle mainBundle]pathForResource:@"www/index.html" ofType:nil];
+//        
+//        NSString* urlResultStr = [NSString stringWithFormat:@"%@%@%@",pathResource,@"?",url];
+//        
+//        NSURL *urlResultRequest = [NSURL fileURLWithPath:urlResultStr];
+//        
+//        [self.viewController.webView loadRequest:[NSURLRequest requestWithURL:urlResultRequest]];
+//        
+//    }
     
     if ([[UIApplication sharedApplication]applicationIconBadgeNumber]== 0)
         [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
