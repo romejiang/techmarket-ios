@@ -18,6 +18,12 @@
 
 @interface WPRegistViewController () <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *ui_imageView_background;
+
+@property (weak, nonatomic) IBOutlet UIImageView *ui_imageView_icon;
+
+@property (weak, nonatomic) IBOutlet UIView *ui_view_frame;
+
 @property (weak, nonatomic) IBOutlet UITextField *ui_textFieldUserName;
 
 @property (weak, nonatomic) IBOutlet UITextField *ui_textFieldEmail;
@@ -47,6 +53,8 @@
 {
     [super viewDidLoad];
     
+    [self _isIphone4];
+    
     [self _addListenKeyBoard];
     
     // Do any additional setup after loading the view from its nib.
@@ -66,6 +74,9 @@
     [self setUi_textFieldUserName:nil];
     [self setUi_textFieldPhone:nil];
     [self setUi_passWord:nil];
+    [self setUi_imageView_background:nil];
+    [self setUi_imageView_icon:nil];
+    [self setUi_view_frame:nil];
     [super viewDidUnload];
 }
 
@@ -77,6 +88,28 @@
 
 /**************************************************************************************/
 
+
+-(void)_isIphone4
+{
+    if (!iPhone5)
+     {
+         [self.ui_imageView_background setImage:[UIImage imageNamed:@"background.png"]];
+         
+         CGRect rect = self.ui_imageView_icon.frame;
+         
+         rect.origin.y = rect.origin.y -30;
+         
+         self.ui_imageView_icon.frame = rect;
+         
+         CGRect rect2 = self.ui_view_frame.frame;
+         
+         rect2.origin.y = rect2.origin.y-40;
+         
+         self.ui_view_frame.frame = rect2;
+    }
+
+
+}
 
 -(void)_netserviceUserLoginWithUserCode:(NSString*)paramUserCode
                             andUserPwd:(NSString*)paramPWd
@@ -189,7 +222,14 @@
     [UIView beginAnimations:nil
                     context:nil];
     [UIView setAnimationDuration:0.3];
+    if (!iPhone5)
+    {
+        [self.ui_scrollView setContentOffset:CGPointMake(0, KUIRegistViewController_ScrollViewOffset+18)];
+    }
+    else
+    {
     [self.ui_scrollView setContentOffset:CGPointMake(0, KUIRegistViewController_ScrollViewOffset)];
+    }
     
     [UIView commitAnimations];
 }
@@ -277,9 +317,13 @@
     {
         [self.ui_textFieldEmail becomeFirstResponder];
     }
-    else
+    else if (textField  == self.ui_textFieldEmail)
     {
         [self.ui_passWord becomeFirstResponder ];
+    }
+    else
+    {
+        [self.ui_passWord resignFirstResponder];
     }
 
 return (YES);

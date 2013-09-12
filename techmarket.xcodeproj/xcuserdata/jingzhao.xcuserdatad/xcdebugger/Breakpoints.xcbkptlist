@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "techmarket/Classes/View/Login/WPRegistViewController.m"
-         timestampString = "400580167.772087"
+         timestampString = "400648995.093177"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "278"
-         endingLineNumber = "278"
+         startingLineNumber = "318"
+         endingLineNumber = "318"
          landmarkName = "-textFieldShouldReturn:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "techmarket/Classes/View/Login/WPRegistViewController.m"
-         timestampString = "400580167.772087"
+         timestampString = "400648995.093177"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "272"
-         endingLineNumber = "272"
+         startingLineNumber = "312"
+         endingLineNumber = "312"
          landmarkName = "-textFieldShouldReturn:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -53,6 +53,19 @@
          startingLineNumber = "188"
          endingLineNumber = "188"
          landmarkName = "-touchBtnAtIndex:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
+         timestampString = "400647977.01893"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "401"
+         endingLineNumber = "401"
+         landmarkName = "-onRegist:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

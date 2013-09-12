@@ -25,6 +25,12 @@
 
 @interface WPLoginViewController ()<UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *ui_image_background;
+
+@property (weak, nonatomic) IBOutlet UIImageView *ui_image_icon;
+
+@property (weak, nonatomic) IBOutlet UIView *ui_view_input;
+
 @property (strong, nonatomic) ASIHTTPRequest *asiHttpRequest;
 
 @property (strong, nonatomic) NSUserDefaults *userDefault;
@@ -54,6 +60,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self _isIphone4];
+    
     
     [self _addListenKeyBoard];
     
@@ -85,6 +94,9 @@
     
     [self setUi_buttonShowPassword:nil];
     
+    [self setUi_image_background:nil];
+    [self setUi_image_icon:nil];
+    [self setUi_view_input:nil];
     [super viewDidUnload];
 }
 
@@ -97,6 +109,27 @@
 
 
 /**************************************************************************************/
+
+-(void)_isIphone4
+{
+    if (!iPhone5)
+    {
+        [self.ui_image_background setImage:[UIImage imageNamed:@"background.png"]];
+      
+        CGRect rect = self.ui_image_icon.frame;
+        
+        rect.origin.y = rect.origin.y -20;
+        
+        self.ui_image_icon.frame = rect;
+        
+        CGRect rect2 = self.ui_view_input.frame;
+        
+        rect2.origin.y = rect2.origin.y-40;
+        
+        self.ui_view_input.frame = rect2;
+    }
+
+}
 
 -(void)_addListenKeyBoard
 {
