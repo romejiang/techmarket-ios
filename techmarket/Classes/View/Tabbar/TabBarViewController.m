@@ -350,7 +350,7 @@
 
 -(void)_removeObserverLoginResult
 {
- [[NSNotificationCenter defaultCenter]removeObserver:self
+     [[NSNotificationCenter defaultCenter]removeObserver:self
                                                 name:KUILoginViewController_LoginSuccess
                                               object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self

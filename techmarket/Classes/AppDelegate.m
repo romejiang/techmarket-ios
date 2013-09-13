@@ -328,6 +328,10 @@
 -(void)application:(UIApplication *)application
        didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
+    
+    
+    
+    NSLog(@"%@",userInfo);
 //    NSString *url = [userInfo objectForKey:@"uri"];
     
 //    if (url)

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "techmarket/Classes/AppDelegate.m"
-         timestampString = "400571242.861093"
+         timestampString = "400671764.563062"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "578"
-         endingLineNumber = "578"
+         startingLineNumber = "582"
+         endingLineNumber = "582"
          landmarkName = "-onMethod:response:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -69,7 +69,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
@@ -82,16 +82,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "techmarket/Classes/AppDelegate.m"
-         timestampString = "400656111.615678"
+         timestampString = "400671764.563062"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "565"
-         endingLineNumber = "565"
-         landmarkName = "-onMethod:response:"
+         startingLineNumber = "335"
+         endingLineNumber = "335"
+         landmarkName = "-application:didReceiveRemoteNotification:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
