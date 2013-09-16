@@ -147,6 +147,8 @@
 		D0B7CF8D1763223500D0DF3A /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF821763223400D0DF3A /* UMSnsAccountViewController.xib */; };
 		D0B7CF8E1763223500D0DF3A /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF831763223400D0DF3A /* UMSShareListController.xib */; };
 		D0B7CF8F1763223500D0DF3A /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */; };
+		D0BE1C0C17E6D15500F12F46 /* wplogin_FindPassword.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BE1C0A17E6D15500F12F46 /* wplogin_FindPassword.png */; };
+		D0BE1C0D17E6D15500F12F46 /* wplogin_FindPassword@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BE1C0B17E6D15500F12F46 /* wplogin_FindPassword@2x.png */; };
 		D0D59CFD17E151D200DB22F3 /* more in Resources */ = {isa = PBXBuildFile; fileRef = D0D59CFC17E151D200DB22F3 /* more */; };
 		D0D59CFF17E1522C00DB22F3 /* innovation in Resources */ = {isa = PBXBuildFile; fileRef = D0D59CFE17E1522C00DB22F3 /* innovation */; };
 		D0DFDD6D17A39ECB0038EDE9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DFDD6B17A39ECB0038EDE9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -384,6 +386,8 @@
 		D0B7CF821763223400D0DF3A /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
 		D0B7CF831763223400D0DF3A /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		D0B7CF841763223400D0DF3A /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		D0BE1C0A17E6D15500F12F46 /* wplogin_FindPassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wplogin_FindPassword.png; sourceTree = "<group>"; };
+		D0BE1C0B17E6D15500F12F46 /* wplogin_FindPassword@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wplogin_FindPassword@2x.png"; sourceTree = "<group>"; };
 		D0D59CFC17E151D200DB22F3 /* more */ = {isa = PBXFileReference; lastKnownFileType = folder; path = more; sourceTree = "<group>"; };
 		D0D59CFE17E1522C00DB22F3 /* innovation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = innovation; sourceTree = "<group>"; };
 		D0DFDD6917A39ECB0038EDE9 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
@@ -762,6 +766,8 @@
 		D09F9D3717E0614500F96027 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				D0BE1C0A17E6D15500F12F46 /* wplogin_FindPassword.png */,
+				D0BE1C0B17E6D15500F12F46 /* wplogin_FindPassword@2x.png */,
 				D09F9D3817E0614500F96027 /* background-568.png */,
 				D09F9D3917E0614500F96027 /* background.png */,
 				D09F9D3A17E0614500F96027 /* background@2x.png */,
@@ -1187,6 +1193,8 @@
 				D09F9D6517E0614500F96027 /* wplogin_showpassword@2x.png in Resources */,
 				D0D59CFD17E151D200DB22F3 /* more in Resources */,
 				D0D59CFF17E1522C00DB22F3 /* innovation in Resources */,
+				D0BE1C0C17E6D15500F12F46 /* wplogin_FindPassword.png in Resources */,
+				D0BE1C0D17E6D15500F12F46 /* wplogin_FindPassword@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

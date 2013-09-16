@@ -17,10 +17,24 @@
     
     NSDictionary *dicUserInfo = [userDefault objectForKey:UserDefaultData];
     
+    NSError *error = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dicUserInfo
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc]initWithData:jsonData
+                                                encoding:NSUTF8StringEncoding];
+    
+    
     CDVPluginResult *pluginResult  = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                                                   messageAsDictionary:dicUserInfo ];
+                                                       messageAsString:jsonString];
+    
+    //    CDVPluginResult *pluginResult  = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+    //                                                   messageAsDictionary:dicUserInfo ];
     [self.commandDelegate sendPluginResult:pluginResult
                                 callbackId:command.callbackId];
+    
 }
 
 -(void)deleteUserInfo:(CDVInvokedUrlCommand*)command
@@ -39,7 +53,7 @@
     
     NSDictionary *dicUserInfo = [userDefault objectForKey:UserDefaultData];
     
-     NSString *param = [command.arguments count] > 0?[command.arguments objectAtIndex:0]:  nil;
+    NSString *param = [command.arguments count] > 0?[command.arguments objectAtIndex:0]:  nil;
     
     NSInfo(@"获取用户信息的参数param = %@",param);
     
@@ -50,7 +64,7 @@
     [self.commandDelegate sendPluginResult:pluginResult
                                 callbackId:command.callbackId];
     
-  }
+}
 
 
 @end
