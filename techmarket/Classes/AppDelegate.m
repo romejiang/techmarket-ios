@@ -60,6 +60,8 @@
 
 #define NewVersionForCurrentRun @"isnewversionforcurrentrun"
 
+#define WPNetKey_ReadUri              @"readUri"
+
 #import "BPush.h"
 
 @interface AppDelegate () <CLLocationManagerDelegate,
@@ -329,10 +331,34 @@
        didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     
+    NSLog(@"userInfo = %@",userInfo);
+    
+    NSString *stringRui = [userInfo objectForKey:WPNetKey_ReadUri];
+    
+    NSArray *listItem  = [stringRui componentsSeparatedByString:@":"];
+    
+    NSString *ParamCompany = [listItem objectAtIndex:0];
+    
+    NSArray *arrayPage = @[@"home",@"market",@"innovation",@"mine",@"more"];
+    
+    if ([ParamCompany isEqualToString:@"xayoudao"])
+    {
+        NSString *stringPage = [listItem objectAtIndex:1];
+        
+        NSInteger intPage = [arrayPage indexOfObject:stringPage];
+        
+        NSString* stringURI = [listItem objectAtIndex:2];
+        
+        NSDictionary *dicInfo = @{KUINetWork_Index: [NSString stringWithFormat:@"%i",intPage],KUINetWork_uri:stringURI,KUINetWork_Name:stringPage};
+        
+         [[NSNotificationCenter defaultCenter]postNotificationName:KUINetWork_PushNotification
+                                                        object:nil
+                                                      userInfo:dicInfo];
+        
+    }
     
     
-    NSLog(@"%@",userInfo);
-//    NSString *url = [userInfo objectForKey:@"uri"];
+  //    NSString *url = [userInfo objectForKey:@"uri"];
     
 //    if (url)
 //    {
@@ -346,9 +372,9 @@
 //        
 //    }
     
-    if ([[UIApplication sharedApplication]applicationIconBadgeNumber]== 0)
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+//    if ([[UIApplication sharedApplication]applicationIconBadgeNumber]== 0)
+//        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+//    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
 }
 

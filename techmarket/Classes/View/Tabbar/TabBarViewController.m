@@ -112,6 +112,8 @@
     //监听登陆结果
     [self _addObserverLoginResult];
     
+    [self _addObserverPushNotification];
+    
     [self touchBtnAtIndex:0];
 }
 
@@ -157,6 +159,8 @@
 -(void)viewDidUnload
 {
     [self _removeObserverLoginResult];
+    
+    [self _removeObservePushNotification];
 }
 
 /**************************************************************************************/
@@ -358,6 +362,53 @@
                                                  object:nil];
 
 }
+
+-(void)_addObserverPushNotification
+{
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(_observerkeyPush:)
+                                                name:KUINetWork_PushNotification
+                                              object:nil];
+}
+
+
+-(void)_removeObservePushNotification
+{
+ [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                name:KUINetWork_PushNotification
+                                              object:nil];
+
+
+}
+
+-(void)_observerkeyPush:(NSNotification*)_notificationInfo
+{
+    NSDictionary *dicURI = [_notificationInfo userInfo];
+    
+    NSString  *strPageIndex = [dicURI objectForKey:KUINetWork_Index];
+    
+    NSString *uri = [dicURI objectForKey:KUINetWork_uri];
+    
+    NSString *strPage = [dicURI objectForKey:KUINetWork_Name];
+    
+    NSString *pathResource =  [[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"%@/index.html",strPage] ofType:nil];
+    
+    NSString* urlResultStr = [NSString stringWithFormat:@"%@%@%@",pathResource,@"?",uri];
+    
+    NSURL *urlResultRequest = [NSURL fileURLWithPath:urlResultStr];
+    
+    CDVViewController *viewPage = [_arrayViewController objectAtIndex:[strPageIndex integerValue]];
+    
+    [viewPage.webView loadRequest:[NSURLRequest requestWithURL:urlResultRequest]];
+    
+    NSLog(@"[strPage integerValue] = %i",[strPageIndex integerValue]);
+    
+    NSLog(@"urlResultStr = %@",urlResultStr);
+    
+
+    [_tabBarView tapButtonIndex:[strPageIndex integerValue]];
+}
+
 
 -(void)_observerKeyLoginSuccess:(NSNotification*)_notificationInfo
 {

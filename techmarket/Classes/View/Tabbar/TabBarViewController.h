@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#define KUINetWork_PushNotification       @"pushNotification"
+
+#define KUINetWork_Name                   @"name"
+
+#define KUINetWork_Index                  @"index"
+
+#define KUINetWork_uri                    @"uri"
+
+
 @interface TabBarViewController : UIViewController
 
 @end
