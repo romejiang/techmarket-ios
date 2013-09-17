@@ -23,5 +23,7 @@
 
 #define UILoginShowNotification @"showLoginNotification"
 
+#define UIGoToPageNotification @"goToPageNotification"
+
 #endif
 

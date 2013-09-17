@@ -40,6 +40,7 @@
 @property (strong, nonatomic)WPLoginViewController *    loginView;
 @property (strong, nonatomic)WPRegistViewController*     regist;
 @property (strong, nonatomic)ActivityIndicatorView * activityIndicatorView;
+@property (strong, nonatomic)NSInteger            pageIndex;
 
 //解决下移问题(存放CDv)
 @property (strong,nonatomic)UIView*      customView;
@@ -113,6 +114,8 @@
     [self _addObserver];
     
     [self touchBtnAtIndex:0];
+    
+    self.pageIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -178,6 +181,9 @@
             return;
           }
     }
+    
+    self.pageIndex = index;
+    
     //根据用户点击tabbar控制View显示和隐藏
     for (UIViewController *viewController in _arrayViewController)
     {
@@ -354,6 +360,12 @@
                                             selector:@selector(_observerShowLoginView:)
                                                 name:UILoginShowNotification
                                               object:nil];
+    
+    //监听跳转
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(_observerGoToPage:)
+                                                name:UIGoToPageNotification
+                                              object:nil];
 }
 
 
@@ -374,6 +386,12 @@
     //移除监听登陆
     [[NSNotificationCenter defaultCenter]removeObserver:self
                                                    name:UILoginShowNotification
+                                                 object:nil];
+    
+   
+    //移除监听跳转
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:UIGoToPageNotification
                                                  object:nil];
 
 }
@@ -419,8 +437,15 @@
 
 -(void)_observerKeyLoginFail:(NSNotification*)_notification
 {
-   [_tabBarView tapButtonIndex:0];
+   [_tabBarView tapButtonIndex:self.pageIndex];
 }
 
+
+-(void)_observerGoToPage:(NSNotification*)_notification
+{
+
+
+
+}
 
 @end

@@ -39,7 +39,7 @@
 @property (nonatomic, readwrite, strong) NSDictionary* pluginsMap;
 @property (nonatomic, readwrite, strong) NSArray* supportedOrientations;
 @property (nonatomic, readwrite, assign) BOOL loadFromString;
-@property (strong, nonatomic) UIImageView *ui_imageView;
+//@property (strong, nonatomic) UIImageView *ui_imageView;
 
 @property (readwrite, assign) BOOL initialized;
 
@@ -407,13 +407,13 @@
     
     rectTemp.size.height =  rectTemp.size.height - [UIApplication sharedApplication].statusBarFrame.size.height;
     
-    self.ui_imageView.frame = rectTemp;
+//    self.ui_imageView.frame = rectTemp;
     
-    [self.ui_imageView setImage:[UIImage imageNamed:@"Default.png"]];
-    
-    [self.view addSubview:self.ui_imageView];
-    
-    self.ui_imageView.hidden = YES;
+//    [self.ui_imageView setImage:[UIImage imageNamed:@"Default.png"]];
+//    
+//    [self.view addSubview:self.ui_imageView];
+//    
+//    self.ui_imageView.hidden = YES;
 }
 
 - (void)hideKeyboardFormAccessoryBar
@@ -619,7 +619,7 @@
 - (void)webViewDidStartLoad:(UIWebView*)theWebView
 {
     
-    self.ui_imageView.hidden = NO;
+//    self.ui_imageView.hidden = NO;
     
     
     NSLog(@"Resetting plugins due to page load.");
@@ -633,7 +633,7 @@
 - (void)webViewDidFinishLoad:(UIWebView*)theWebView
 {
     
-    self.ui_imageView.hidden = YES;
+//    self.ui_imageView.hidden = YES;
     NSLog(@"Finished load of: %@", theWebView.request.URL);
     // It's safe to release the lock even if this is just a sub-frame that's finished loading.
     [CDVUserAgentUtil releaseLock:&_userAgentLockToken];
@@ -710,6 +710,7 @@
     /*
      * Handle all other types of urls (tel:, sms:), and requests to load a url in the main webview.
      */
+    
     else {
         if ([self.whitelist schemeIsAllowed:[url scheme]]) {
             return [self.whitelist URLIsAllowed:url];
