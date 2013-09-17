@@ -21,8 +21,7 @@
 
 #define UserDefaultData @"userDefaultData"
 
-
-
+#define UILoginShowNotification @"showLoginNotification"
 
 #endif
 

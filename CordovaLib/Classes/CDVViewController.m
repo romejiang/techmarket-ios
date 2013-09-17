@@ -660,6 +660,8 @@
 {
     NSURL* url = [request URL];
     
+    NSLog(@"%@",url.absoluteString);
+    
     /*
      * Execute any commands queued with cordova.exec() on the JS side.
      * The part of the URL after gap:// is irrelevant.

@@ -110,9 +110,7 @@
     }
     
     //监听登陆结果
-    [self _addObserverLoginResult];
-    
-    [self _addObserverPushNotification];
+    [self _addObserver];
     
     [self touchBtnAtIndex:0];
 }
@@ -158,9 +156,7 @@
 
 -(void)viewDidUnload
 {
-    [self _removeObserverLoginResult];
-    
-    [self _removeObservePushNotification];
+    [self _removeObserver];
 }
 
 /**************************************************************************************/
@@ -173,6 +169,7 @@
 
 -(void)touchBtnAtIndex:(NSInteger)index
 {
+    //再点击3时要判断是否登陆
     if (index == 3)
     {
         if (![[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData])
@@ -331,54 +328,59 @@
     NSInfo(@"显示帮助信息结束");
 }
 
-/*
- 添加监听
- */
-
--(void)_addObserverLoginResult
+-(void)_addObserver
 {
-  [[NSNotificationCenter defaultCenter]addObserver:self
-                                          selector:@selector(_observerKeyLoginSuccess:)
-                                              name:KUILoginViewController_LoginSuccess
-                                            object:nil];
+
+
+     //添加监听LoginResult
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(_observerKeyLoginSuccess:)
+                                                name:KUILoginViewController_LoginSuccess
+                                              object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(_observerKeyLoginFail:)
                                                 name:KUILoginViewController_LoginFail
                                               object:nil];
-
-}
-
-/*
-移除监听
- */
-
--(void)_removeObserverLoginResult
-{
-     [[NSNotificationCenter defaultCenter]removeObserver:self
-                                                name:KUILoginViewController_LoginSuccess
-                                              object:nil];
-    [[NSNotificationCenter defaultCenter]removeObserver:self
-                                                   name:KUILoginViewController_LoginFail
-                                                 object:nil];
-
-}
-
--(void)_addObserverPushNotification
-{
+    
+    
+     //添加监听推送跳转页面
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(_observerkeyPush:)
                                                 name:KUINetWork_PushNotification
                                               object:nil];
+
+     //添加监听登陆
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(_observerShowLoginView:)
+                                                name:UILoginShowNotification
+                                              object:nil];
 }
 
 
--(void)_removeObservePushNotification
+-(void)_removeObserver
 {
- [[NSNotificationCenter defaultCenter]removeObserver:self
-                                                name:KUINetWork_PushNotification
-                                              object:nil];
+     //移除监听LoginResult
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:KUILoginViewController_LoginSuccess
+                                                 object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:KUILoginViewController_LoginFail
+                                                 object:nil];
+    //移除监听推送跳转页面
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:KUINetWork_PushNotification
+                                                 object:nil];
+    
+    //移除监听登陆
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:UILoginShowNotification
+                                                 object:nil];
 
+}
 
+-(void)_observerShowLoginView:(NSNotificationCenter*)_notificationInfo
+{
+    [self _showLoginView];
 }
 
 -(void)_observerkeyPush:(NSNotification*)_notificationInfo
@@ -409,13 +411,11 @@
     [_tabBarView tapButtonIndex:[strPageIndex integerValue]];
 }
 
-
 -(void)_observerKeyLoginSuccess:(NSNotification*)_notificationInfo
 {
     [_tabBarView tapButtonIndex:3];
     
 }
-
 
 -(void)_observerKeyLoginFail:(NSNotification*)_notification
 {
