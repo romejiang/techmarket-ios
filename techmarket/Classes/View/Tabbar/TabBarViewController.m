@@ -40,7 +40,7 @@
 @property (strong, nonatomic)WPLoginViewController *    loginView;
 @property (strong, nonatomic)WPRegistViewController*     regist;
 @property (strong, nonatomic)ActivityIndicatorView * activityIndicatorView;
-@property (strong, nonatomic)NSInteger            pageIndex;
+@property (unsafe_unretained, nonatomic)NSInteger            pageIndex;
 
 //解决下移问题(存放CDv)
 @property (strong,nonatomic)UIView*      customView;
