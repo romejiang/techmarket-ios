@@ -46,19 +46,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "techmarket/Classes/View/Tabbar/TabBarViewController.m"
-         timestampString = "401007279.409109"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "191"
-         endingLineNumber = "191"
-         landmarkName = "@implementation TabBarViewController"
-         landmarkType = "3">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "techmarket/Classes/View/Login/WPLoginViewController.m"
          timestampString = "400647977.01893"
          startingColumnNumber = "9223372036854775807"
