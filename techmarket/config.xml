@@ -67,6 +67,7 @@
         <plugin name="GetApplicationInfo" value ="CDVGetApplicationInfo"/>
         <plugin name="GetUserInfoPlugin" value ="CDVGetUserInfoPlugin"/>
          <plugin name="LoginPlugin" value ="CDVLoginPlugin"/>
+        <plugin name="ClearAppCachePlugin" value ="CDVClearAppCachePlugin"/>
         
     </plugins>
 

@@ -96,6 +96,8 @@
 		D03AB65817055AA700481530 /* CDVSingletonEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D03AB65617055AA700481530 /* CDVSingletonEventStore.m */; };
 		D068F56C17DF010C003B9384 /* CDVGetUserInfoPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = D068F56A17DF010C003B9384 /* CDVGetUserInfoPlugin.h */; };
 		D068F56D17DF010C003B9384 /* CDVGetUserInfoPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D068F56B17DF010C003B9384 /* CDVGetUserInfoPlugin.m */; };
+		D088E53517EEE22200B28DDF /* CDVClearAppCachePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = D088E53317EEE22100B28DDF /* CDVClearAppCachePlugin.h */; };
+		D088E53617EEE22200B28DDF /* CDVClearAppCachePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D088E53417EEE22100B28DDF /* CDVClearAppCachePlugin.m */; };
 		D08B438B1712601500DD791B /* CDVCheckVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B43891712601500DD791B /* CDVCheckVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D08B438C1712601500DD791B /* CDVCheckVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B438A1712601500DD791B /* CDVCheckVersion.m */; };
 		D0992171171FC67C009A41D4 /* libOpenUDID.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A7BA58171F91AF006E0DA5 /* libOpenUDID.a */; };
@@ -282,6 +284,8 @@
 		D03AB65617055AA700481530 /* CDVSingletonEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSingletonEventStore.m; path = Classes/CDVSingletonEventStore.m; sourceTree = "<group>"; };
 		D068F56A17DF010C003B9384 /* CDVGetUserInfoPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVGetUserInfoPlugin.h; path = Classes/CDVGetUserInfoPlugin.h; sourceTree = "<group>"; };
 		D068F56B17DF010C003B9384 /* CDVGetUserInfoPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVGetUserInfoPlugin.m; path = Classes/CDVGetUserInfoPlugin.m; sourceTree = "<group>"; };
+		D088E53317EEE22100B28DDF /* CDVClearAppCachePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVClearAppCachePlugin.h; sourceTree = "<group>"; };
+		D088E53417EEE22100B28DDF /* CDVClearAppCachePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVClearAppCachePlugin.m; sourceTree = "<group>"; };
 		D08B43891712601500DD791B /* CDVCheckVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCheckVersion.h; path = Classes/CDVCheckVersion.h; sourceTree = "<group>"; };
 		D08B438A1712601500DD791B /* CDVCheckVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVCheckVersion.m; path = Classes/CDVCheckVersion.m; sourceTree = "<group>"; };
 		D099215B171FBA93009A41D4 /* CDVGetUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVGetUUID.h; path = Classes/CDVGetUUID.h; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 				0F9FC4CF1746278E00EB52E7 /* CDVRedirect.m */,
 				D0D5D54A1754866800F099C5 /* CDVGetApplicationInfo.h */,
 				D0D5D54B1754866800F099C5 /* CDVGetApplicationInfo.m */,
+				D088E53317EEE22100B28DDF /* CDVClearAppCachePlugin.h */,
+				D088E53417EEE22100B28DDF /* CDVClearAppCachePlugin.m */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 				D0D5D54C1754866800F099C5 /* CDVGetApplicationInfo.h in Headers */,
 				D068F56C17DF010C003B9384 /* CDVGetUserInfoPlugin.h in Headers */,
 				D0BE1C4117E7022C00F12F46 /* CDVLoginPlugin.h in Headers */,
+				D088E53517EEE22200B28DDF /* CDVClearAppCachePlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +783,7 @@
 				D0D5D54D1754866800F099C5 /* CDVGetApplicationInfo.m in Sources */,
 				D068F56D17DF010C003B9384 /* CDVGetUserInfoPlugin.m in Sources */,
 				D0BE1C4217E7022C00F12F46 /* CDVLoginPlugin.m in Sources */,
+				D088E53617EEE22200B28DDF /* CDVClearAppCachePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

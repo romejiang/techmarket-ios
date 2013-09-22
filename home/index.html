@@ -242,6 +242,20 @@
                              ["zhao"]);            
             }
             
+            
+            function clearCache()
+            {
+                cordova.exec(function(winParam) {
+                             
+                             alert(winParam)
+                             },
+                             function(error) {
+                             },
+                             "ClearAppCachePlugin",
+                             "clearcache",
+                             ["zhao"]);
+            }
+            
             document.addEventListener('deviceready', function() {
                                       app.initialize();
                                       navigator.splashscreen.hide();
@@ -260,7 +274,7 @@
         <input type="button"value="修改提醒"style="width:100px;height:22px;"onclick="modifyAlarmClock();" />
         <input type="button"value="查询提醒"style="width:100px;height:22px;"onclick="searchAlarmClock();" />
         <input type="button"value="调用更新插件"style="width:100px;height:22px;"onclick="checkVersion();" />
-        
+        <input type="button"value="清除缓存"style="width:100px;height:22px;"onclick="clearCache();" />
         <input type="button"value="注册微信"style="width:100px;height:22px;"onclick="regweixin();" />
         <input type="button"value="注册友盟"style="width:100px;height:22px;"onclick="regumeng();" />
         <input type="button"value="分享"style="width:100px;height:22px;"onclick="share();" />
