@@ -172,27 +172,30 @@
 
 -(void)touchBtnAtIndex:(NSInteger)index
 {
+    
+    NSLog(@"userDefault%@",[[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData]);
+    
     //再点击3时要判断是否登陆
-    if (index == 3)
+    if (index == 3 && ![[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData])
     {
-        if (![[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData])
-        {
-            [self _showLoginView];
-            return;
-          }
+         [self _showLoginView];
+    }
+    else
+    {
+      self.pageIndex = index;
     }
     
-    self.pageIndex = index;
-    
     //根据用户点击tabbar控制View显示和隐藏
-    for (UIViewController *viewController in _arrayViewController)
+    for (CDVViewController *viewController in _arrayViewController)
     {
         viewController.view.hidden = YES;
     }
     
-    UIViewController *viewTouchController = [_arrayViewController objectAtIndex:index];
+    CDVViewController *viewTouchController = [_arrayViewController objectAtIndex:index];
     
     viewTouchController.view.hidden = NO;
+    
+    [viewTouchController.webView reload];
 }
 
 /**************************************************************************************/
@@ -431,8 +434,7 @@
 
 -(void)_observerKeyLoginSuccess:(NSNotification*)_notificationInfo
 {
-    [_tabBarView tapButtonIndex:3];
-    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)_observerKeyLoginFail:(NSNotification*)_notification

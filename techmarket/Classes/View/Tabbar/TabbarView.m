@@ -152,12 +152,17 @@
 
 -(void)_buttonSelectedwithIndex:(NSInteger)index
 {
+    UIButton *button = [_arrayButton objectAtIndex:index];
+    if ([button isSelected])
+    {
+        return;
+    }
+    
     for (UIButton *button in _arrayButton)
     {
         [button setSelected:NO];
     }
-
-    UIButton *button = [_arrayButton objectAtIndex:index];
+    
     [button setSelected:YES];
 }
 

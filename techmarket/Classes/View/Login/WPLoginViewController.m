@@ -366,7 +366,7 @@
 - (IBAction)onLogin:(id)sender
 {
     //用户名
-    if ([self.userName.text length]<  2 || [self.userName.text length] >10 )
+    if ([self.userName.text length]<  6 || [self.userName.text length] >15 )
 	{
 		if ([self.userName.text length] == 0)
 		{
@@ -377,7 +377,7 @@
 	}
     
     //密码
-    else if ([self.password.text length]<  5 || [self.password.text length] >10 )
+    else if ([self.password.text length]<  6|| [self.password.text length] >15 )
     {
         if ([self.password.text length] == 0)
         {
