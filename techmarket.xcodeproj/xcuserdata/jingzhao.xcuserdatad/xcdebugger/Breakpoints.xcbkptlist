@@ -85,13 +85,39 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CordovaLib/Classes/CDVViewController.m"
-         timestampString = "401596002.95205"
+         filePath = "CordovaLib/CDVViewDefault.m"
+         timestampString = "401599581.638341"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "622"
-         endingLineNumber = "622"
-         landmarkName = "-webViewDidStartLoad:"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
+         landmarkName = "-_initDefaultViewwithFrame:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CordovaLib/CDVViewDefault.m"
+         timestampString = "401599584.233968"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-_initDefaultViewwithFrame:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CordovaLib/CDVViewDefault.m"
+         timestampString = "401599584.287193"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
+         landmarkName = "-_initDefaultViewwithFrame:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -86,6 +86,8 @@
 		D0396E211721247E007A5C00 /* CDVGetUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = D099215C171FBA93009A41D4 /* CDVGetUUID.m */; };
 		D0396E241721299B007A5C00 /* CDVFullScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = D0396E221721299A007A5C00 /* CDVFullScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0396E251721299B007A5C00 /* CDVFullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = D0396E231721299A007A5C00 /* CDVFullScreen.m */; };
+		D03A259817EFE59F005C6081 /* CDVViewDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = D03A259617EFE59F005C6081 /* CDVViewDefault.h */; };
+		D03A259917EFE59F005C6081 /* CDVViewDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A259717EFE59F005C6081 /* CDVViewDefault.m */; };
 		D03AB5FD1705315C00481530 /* CDVAlarmClock.h in Headers */ = {isa = PBXBuildFile; fileRef = D03AB5F71705315C00481530 /* CDVAlarmClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D03AB5FE1705315C00481530 /* CDVAlarmClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D03AB5F81705315C00481530 /* CDVAlarmClock.m */; };
 		D03AB5FF1705315C00481530 /* CDVCaptureSound.h in Headers */ = {isa = PBXBuildFile; fileRef = D03AB5F91705315C00481530 /* CDVCaptureSound.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -273,6 +275,8 @@
 		D024E7AF1754652C0072F7B8 /* ApplicationInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ApplicationInfo.xcodeproj; path = ../techmarket/Libs/ApplicationInfo/ApplicationInfo.xcodeproj; sourceTree = "<group>"; };
 		D0396E221721299A007A5C00 /* CDVFullScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVFullScreen.h; path = Classes/CDVFullScreen.h; sourceTree = "<group>"; };
 		D0396E231721299A007A5C00 /* CDVFullScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVFullScreen.m; path = Classes/CDVFullScreen.m; sourceTree = "<group>"; };
+		D03A259617EFE59F005C6081 /* CDVViewDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVViewDefault.h; sourceTree = "<group>"; };
+		D03A259717EFE59F005C6081 /* CDVViewDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVViewDefault.m; sourceTree = "<group>"; };
 		D03AB5F71705315C00481530 /* CDVAlarmClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVAlarmClock.h; path = Classes/CDVAlarmClock.h; sourceTree = "<group>"; };
 		D03AB5F81705315C00481530 /* CDVAlarmClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVAlarmClock.m; path = Classes/CDVAlarmClock.m; sourceTree = "<group>"; };
 		D03AB5F91705315C00481530 /* CDVCaptureSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCaptureSound.h; path = Classes/CDVCaptureSound.h; sourceTree = "<group>"; };
@@ -372,6 +376,8 @@
 				F858FBC5166009A8007DA594 /* CDVConfigParser.m */,
 				8852C43614B65FD800F0E735 /* CDVViewController.h */,
 				8852C43714B65FD800F0E735 /* CDVViewController.m */,
+				D03A259617EFE59F005C6081 /* CDVViewDefault.h */,
+				D03A259717EFE59F005C6081 /* CDVViewDefault.m */,
 				EB3B3545161CB44D003DBE7D /* CDVCommandQueue.h */,
 				EB3B3546161CB44D003DBE7D /* CDVCommandQueue.m */,
 			);
@@ -622,6 +628,7 @@
 				D068F56C17DF010C003B9384 /* CDVGetUserInfoPlugin.h in Headers */,
 				D0BE1C4117E7022C00F12F46 /* CDVLoginPlugin.h in Headers */,
 				D088E53517EEE22200B28DDF /* CDVClearAppCachePlugin.h in Headers */,
+				D03A259817EFE59F005C6081 /* CDVViewDefault.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +791,7 @@
 				D068F56D17DF010C003B9384 /* CDVGetUserInfoPlugin.m in Sources */,
 				D0BE1C4217E7022C00F12F46 /* CDVLoginPlugin.m in Sources */,
 				D088E53617EEE22200B28DDF /* CDVClearAppCachePlugin.m in Sources */,
+				D03A259917EFE59F005C6081 /* CDVViewDefault.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

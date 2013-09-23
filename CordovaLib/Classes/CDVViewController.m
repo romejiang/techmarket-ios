@@ -23,7 +23,7 @@
 #import "CDVConfigParser.h"
 #import "CDVUserAgentUtil.h"
 #import "CDVWebViewDelegate.h"
-#import "Setting.h"
+#import "CDVViewDefault.h"
 
 #define degreesToRadian(x) (M_PI * (x) / 180.0)
 
@@ -40,7 +40,7 @@
 @property (nonatomic, readwrite, strong) NSDictionary* pluginsMap;
 @property (nonatomic, readwrite, strong) NSArray* supportedOrientations;
 @property (nonatomic, readwrite, assign) BOOL loadFromString;
-@property (strong, nonatomic) UIImageView *ui_imageView;
+@property (strong, nonatomic) CDVViewDefault *defaultView;
 
 @property (readwrite, assign) BOOL initialized;
 
@@ -407,13 +407,12 @@
     
     rectTemp.size.height =  rectTemp.size.height - [UIApplication sharedApplication].statusBarFrame.size.height;
     
-    self.ui_imageView.frame = rectTemp;
+    _defaultView = [[CDVViewDefault alloc]initWithFrame:rectTemp];
     
-    [self.ui_imageView setImage:[UIImage imageNamed:@"Default.png"]];
+    [self.view addSubview:_defaultView];
     
-    [self.view addSubview:self.ui_imageView];
+    _defaultView.hidden = YES;
     
-    self.ui_imageView.hidden = YES;
 }
 
 - (void)hideKeyboardFormAccessoryBar
@@ -618,10 +617,7 @@
  */
 - (void)webViewDidStartLoad:(UIWebView*)theWebView
 {
-    
-    self.ui_imageView.hidden = NO;
-    [self.view bringSubviewToFront:self.ui_imageView];
-    
+    _defaultView.hidden = NO;
     
     NSLog(@"Resetting plugins due to page load.");
     [_commandQueue resetRequestId];
@@ -633,15 +629,8 @@
  */
 - (void)webViewDidFinishLoad:(UIWebView*)theWebView
 {
-    if (![[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData])
-    {
-         self.ui_imageView.hidden = NO;
-
-    }
-    else
-    {
-    self.ui_imageView.hidden = YES;
-    }
+    _defaultView.hidden = YES;
+    
     NSLog(@"Finished load of: %@", theWebView.request.URL);
     // It's safe to release the lock even if this is just a sub-frame that's finished loading.
     [CDVUserAgentUtil releaseLock:&_userAgentLockToken];
