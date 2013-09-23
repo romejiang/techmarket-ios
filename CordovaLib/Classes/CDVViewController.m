@@ -23,6 +23,7 @@
 #import "CDVConfigParser.h"
 #import "CDVUserAgentUtil.h"
 #import "CDVWebViewDelegate.h"
+#import "Setting.h"
 
 #define degreesToRadian(x) (M_PI * (x) / 180.0)
 
@@ -402,7 +403,6 @@
     }];
     
     
-    
     CGRect rectTemp = [UIScreen mainScreen].bounds;
     
     rectTemp.size.height =  rectTemp.size.height - [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -620,6 +620,7 @@
 {
     
     self.ui_imageView.hidden = NO;
+    [self.view bringSubviewToFront:self.ui_imageView];
     
     
     NSLog(@"Resetting plugins due to page load.");
@@ -632,8 +633,15 @@
  */
 - (void)webViewDidFinishLoad:(UIWebView*)theWebView
 {
-    
+    if (![[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData])
+    {
+         self.ui_imageView.hidden = NO;
+
+    }
+    else
+    {
     self.ui_imageView.hidden = YES;
+    }
     NSLog(@"Finished load of: %@", theWebView.request.URL);
     // It's safe to release the lock even if this is just a sub-frame that's finished loading.
     [CDVUserAgentUtil releaseLock:&_userAgentLockToken];
