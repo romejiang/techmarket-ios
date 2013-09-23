@@ -58,16 +58,17 @@
 
 #import "WPNetKey.h"
 
-#define NewVersionForCurrentRun @"isnewversionforcurrentrun"
+#import "BPush.h"
+
+#define NewVersionForCurrentRun       @"isnewversionforcurrentrun"
 
 #define WPNetKey_ReadUri              @"readUri"
-
-#import "BPush.h"
 
 @interface AppDelegate () <CLLocationManagerDelegate,
                            BPushDelegate>
 
 @property (strong, nonatomic) ASIFormDataRequest *request;
+
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
@@ -250,16 +251,6 @@
     
     NSInfo(@"本次注册token:%@", stringToken);
     
-    //	NSString *UUID;
-    //	if ([[[UIDevice currentDevice]systemVersion] floatValue]> 5.0)
-    //	{
-    //		UUID = [[UIDevice currentDevice].identifierForVendor UUIDString];
-    //	}
-    //	else
-    //	{
-    //		UUID = [UIDevice currentDevice].uniqueIdentifier;
-    //	}
-    
     ApplicationInfo*  appInfo = [[ApplicationInfo alloc] init];
     
     NSMutableDictionary *dicSend = [NSMutableDictionary dictionaryWithCapacity:10];
@@ -320,6 +311,7 @@
     }];
     
     [request startAsynchronous];
+
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
@@ -596,18 +588,13 @@
     if ([BPushRequestMethod_Bind isEqualToString:method])
     {
         NSDictionary* res = [[NSDictionary alloc] initWithDictionary:data];
-        
-//        NSString *appid = [res valueForKey:BPushRequestAppIdKey];
+
         NSString *userid = [res valueForKey:BPushRequestUserIdKey];
         
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         
         [userDefault setObject:userid forKey:WPNetkeyUserId];
         
-//        NSString *channelid = [res valueForKey:BPushRequestChannelIdKey];
-//        int returnCode = [[res valueForKey:BPushRequestErrorCodeKey] intValue];
-//        NSString *requestid = [res valueForKey:BPushRequestRequestIdKey];
-     
         NSLog(@"res = %@",res);
     }
     else if ([BPushRequestMethod_Unbind isEqualToString:method])
