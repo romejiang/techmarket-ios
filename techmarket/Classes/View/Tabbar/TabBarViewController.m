@@ -196,10 +196,10 @@
     
     viewTouchController.view.hidden = NO;
     
-    if (index == 4)
-    {
-        [viewTouchController.webView reload];
-    }
+//    if (index == 4)
+//    {
+//        [viewTouchController.webView reload];
+//    }
 }
 
 -(void)falseTouchBtnAtIndex:(NSInteger)index withNSstringStartPage:(NSString*)startPage
@@ -424,6 +424,14 @@
     
 }
 
+/**************************************************************************************/
+
+#pragma mark -
+#pragma mark 监听的方法处理
+#pragma mark -
+
+/**************************************************************************************/
+
 -(void)_observerShowLoginView:(NSNotificationCenter*)_notificationInfo
 {
     [self _showLoginView];
@@ -442,24 +450,22 @@
     NSString *pathResource =  [[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"%@/index.html",strPage] ofType:nil];
     
     NSString* urlResultStr = [NSString stringWithFormat:@"%@%@%@",pathResource,@"?",uri];
-    
-    NSURL *urlResultRequest = [NSURL fileURLWithPath:urlResultStr];
-    
-    CDVViewController *viewPage = [_arrayViewController objectAtIndex:[strPageIndex integerValue]];
-    
-    [viewPage.webView loadRequest:[NSURLRequest requestWithURL:urlResultRequest]];
-    
-    NSLog(@"[strPage integerValue] = %i",[strPageIndex integerValue]);
-    
-    NSLog(@"urlResultStr = %@",urlResultStr);
-    
-    
-    [_tabBarView tapButtonIndex:[strPageIndex integerValue]];
+
+    [_tabBarView falseTapButtonIndex:[strPageIndex integerValue] withNSstringStartPage:urlResultStr];
 }
 
 -(void)_observerKeyLoginSuccess:(NSNotification*)_notificationInfo
 {
     [self dismissModalViewControllerAnimated:YES];
+    
+    //要俩个登陆信息有关的重新加载
+    CDVViewController *mineController = [_arrayViewController objectAtIndex:3];
+    
+    [mineController.webView reload];
+    
+    CDVViewController *moreController = [_arrayViewController objectAtIndex:4];
+    
+    [moreController.webView reload];
 }
 
 -(void)_observerKeyLoginFail:(NSNotification*)_notification
@@ -483,9 +489,6 @@
     NSLog(@"urlResultStr = %@",urlResultStr);
     
     NSInteger intPage = [arrayPage indexOfObject:gotoPage];
-    
-    //     CDVViewController *viewPage = [_arrayViewController objectAtIndex:intPage];
-    
     
     [_tabBarView falseTapButtonIndex:intPage withNSstringStartPage:urlResultStr];
 }

@@ -39,7 +39,7 @@
     [self addSubview:_imageView];
 
     //activityIndicatorView
-    _largeActivity  = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _largeActivity  = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     
     _largeActivity.center = CGPointMake(frame.size.width/2, 200);
     

@@ -55,6 +55,8 @@
     
     NSString *param = [command.arguments count] > 0?[command.arguments objectAtIndex:0]:  nil;
     
+    NSLog(@"param = %@",param);
+    
     NSInfo(@"获取用户信息的参数param = %@",param);
     
     NSString *userInfo = [dicUserInfo objectForKey:param];
