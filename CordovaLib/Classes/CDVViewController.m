@@ -24,6 +24,7 @@
 #import "CDVUserAgentUtil.h"
 #import "CDVWebViewDelegate.h"
 #import "CDVViewDefault.h"
+#import "Setting.h"
 
 #define degreesToRadian(x) (M_PI * (x) / 180.0)
 
@@ -181,6 +182,11 @@
     }
     
     return [self.whitelist URLIsAllowed:url];
+}
+
+- (void) reload
+{
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.startPage]]];
 }
 
 - (void)loadSettings
@@ -629,9 +635,10 @@
  */
 - (void)webViewDidFinishLoad:(UIWebView*)theWebView
 {
+    NSLog(@"url is %@", theWebView.request.URL.relativePath);
     _defaultView.hidden = YES;
     
-    NSLog(@"Finished load of: %@", theWebView.request.URL);
+    
     // It's safe to release the lock even if this is just a sub-frame that's finished loading.
     [CDVUserAgentUtil releaseLock:&_userAgentLockToken];
     
@@ -657,7 +664,29 @@
 {
     NSURL* url = [request URL];
     
+    NSString *strGoToPage = url.absoluteString;
+    
+    NSLog(@"%@",strGoToPage);
+    
+    NSArray *arrayGoToPage = [strGoToPage componentsSeparatedByString:@":"];
+    
+    NSString *twoParamArray = [arrayGoToPage objectAtIndex:1];
+    
+    NSLog(@"%@",[twoParamArray substringToIndex:2]);
+    
+    if ([[arrayGoToPage objectAtIndex:0]isEqual:@"xayoudao"] && [[twoParamArray substringToIndex:2]isEqual:@"//"]  )
+    {
+        NSDictionary* dicUserInfo =@{UIGoToPage: [twoParamArray substringFromIndex:2],
+                                     LoadPage:[arrayGoToPage objectAtIndex:2]};
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:UIGoToPageNotification
+                                                           object:nil userInfo:dicUserInfo];
+    }
+    
     NSLog(@"%@",url.absoluteString);
+    
+    
+    
     
     /*
      * Execute any commands queued with cordova.exec() on the JS side.

@@ -10,6 +10,8 @@
 @protocol tabbarDelegate <NSObject>
 
 -(void)touchBtnAtIndex:(NSInteger)index;
+-(void)falseTouchBtnAtIndex:(NSInteger)index withNSstringStartPage:(NSString*)startPage;
+
 
 @end
 
@@ -20,5 +22,6 @@
 @property(nonatomic,weak) id<tabbarDelegate> delegate;
 
 -(void)tapButtonIndex:(NSInteger)index;
+-(void)falseTapButtonIndex:(NSInteger)index withNSstringStartPage:(NSString*)startPage;
 
 @end

@@ -23,6 +23,8 @@
 #import "WPLoginViewController.h"
 #import "WPRegistViewController.h"
 
+#import <Foundation/NSURLError.h>
+
 #define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
 @interface TabBarViewController ()<tabbarDelegate,WPHelpViewDelegate>
@@ -75,7 +77,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     
-
+    
     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
 }
 
@@ -89,7 +91,7 @@
     _customView = [[UIView alloc]init];
     
     [self.view addSubview:_customView];
-        
+    
     [self _showHelpView];
     
     [self debugStart];
@@ -137,7 +139,7 @@
     width = sizeDevice.width;
     
     height = sizeDevice.height;
-
+    
     CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     
     _customView.frame = CGRectMake(0, 0, width, height);
@@ -172,17 +174,16 @@
 
 -(void)touchBtnAtIndex:(NSInteger)index
 {
-    
     NSLog(@"userDefault%@",[[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData]);
     
     //再点击3时要判断是否登陆
     if (index == 3 && ![[NSUserDefaults standardUserDefaults]objectForKey:UserDefaultData])
     {
-         [self _showLoginView];
+        [self _showLoginView];
     }
     else
     {
-      self.pageIndex = index;
+        self.pageIndex = index;
     }
     
     //根据用户点击tabbar控制View显示和隐藏
@@ -195,8 +196,32 @@
     
     viewTouchController.view.hidden = NO;
     
-    [viewTouchController.webView reload];
+    if (index == 4)
+    {
+        [viewTouchController.webView reload];
+    }
 }
+
+-(void)falseTouchBtnAtIndex:(NSInteger)index withNSstringStartPage:(NSString*)startPage
+{
+    for (CDVViewController *viewController in _arrayViewController)
+    {
+        if ([_arrayViewController indexOfObject:viewController]!= index )
+        {
+            viewController.view.hidden = YES;
+        }
+    }
+    
+    CDVViewController *viewController = [_arrayViewController objectAtIndex:index];
+    
+    viewController.startPage = startPage;
+    
+    [viewController reload];
+    
+    viewController.view.hidden = NO;
+    
+}
+
 
 /**************************************************************************************/
 
@@ -339,9 +364,9 @@
 
 -(void)_addObserver
 {
-
-
-     //添加监听LoginResult
+    
+    
+    //添加监听LoginResult
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(_observerKeyLoginSuccess:)
                                                 name:KUILoginViewController_LoginSuccess
@@ -352,13 +377,13 @@
                                               object:nil];
     
     
-     //添加监听推送跳转页面
+    //添加监听推送跳转页面
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(_observerkeyPush:)
                                                 name:KUINetWork_PushNotification
                                               object:nil];
-
-     //添加监听登陆
+    
+    //添加监听登陆
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(_observerShowLoginView:)
                                                 name:UILoginShowNotification
@@ -374,7 +399,7 @@
 
 -(void)_removeObserver
 {
-     //移除监听LoginResult
+    //移除监听LoginResult
     [[NSNotificationCenter defaultCenter]removeObserver:self
                                                    name:KUILoginViewController_LoginSuccess
                                                  object:nil];
@@ -391,12 +416,12 @@
                                                    name:UILoginShowNotification
                                                  object:nil];
     
-   
+    
     //移除监听跳转
     [[NSNotificationCenter defaultCenter]removeObserver:self
                                                    name:UIGoToPageNotification
                                                  object:nil];
-
+    
 }
 
 -(void)_observerShowLoginView:(NSNotificationCenter*)_notificationInfo
@@ -428,7 +453,7 @@
     
     NSLog(@"urlResultStr = %@",urlResultStr);
     
-
+    
     [_tabBarView tapButtonIndex:[strPageIndex integerValue]];
 }
 
@@ -439,14 +464,31 @@
 
 -(void)_observerKeyLoginFail:(NSNotification*)_notification
 {
-   [_tabBarView tapButtonIndex:self.pageIndex];
+    [_tabBarView tapButtonIndex:self.pageIndex];
 }
 
 
 -(void)_observerGoToPage:(NSNotification*)_notification
 {
-
-
+    NSString *gotoPage = [_notification.userInfo objectForKey:UIGoToPage];
+    
+    NSString *loadPage = [_notification.userInfo objectForKey:LoadPage];
+    
+    NSArray *arrayPage = @[@"home",@"market",@"innovation",@"mine",@"more"];
+    
+    NSString *pathResource =  [[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"%@/index.html",gotoPage] ofType:nil];
+    
+    NSString* urlResultStr = [NSString stringWithFormat:@"%@%@%@",pathResource,@"#",loadPage];
+    
+    NSLog(@"urlResultStr = %@",urlResultStr);
+    
+    NSInteger intPage = [arrayPage indexOfObject:gotoPage];
+    
+    //     CDVViewController *viewPage = [_arrayViewController objectAtIndex:intPage];
+    
+    
+    [_tabBarView falseTapButtonIndex:intPage withNSstringStartPage:urlResultStr];
 }
+
 
 @end

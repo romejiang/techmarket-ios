@@ -14,9 +14,9 @@
 
 /* 域名 */
 #ifdef DEBUG
-    #define API_DOMAIN @"http://cloud.appmars.com"
+#define API_DOMAIN @"http://cloud.appmars.com"
 #else
-    #define API_DOMAIN @"http://115.28.36.217"
+#define API_DOMAIN @"http://115.28.36.217"
 #endif
 
 #define UserDefaultData @"userDefaultData"
@@ -24,6 +24,10 @@
 #define UILoginShowNotification @"showLoginNotification"
 
 #define UIGoToPageNotification @"goToPageNotification"
+
+#define UIGoToPage @"goToPage"
+
+#define LoadPage    @"loadPage"
 
 #endif
 

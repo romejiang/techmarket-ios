@@ -31,8 +31,8 @@
 {
     [super setFrame:frame];
     [self _layoutView];
-
-
+    
+    
 }
 
 -(id)init
@@ -68,17 +68,17 @@
     [_button_center setImage:[UIImage imageNamed:@"tabbar_innovation.png"] forState:UIControlStateNormal];
     [_button_center setImage:[UIImage imageNamed:@"tabbar_innovation_down.png"] forState:UIControlStateSelected];
     [_button_center addTarget:self action:@selector(btn1Click:) forControlEvents:UIControlEventTouchUpInside];
-//    [self insertSubview:_button_center aboveSubview:_tabbarViewCenter];
+    //    [self insertSubview:_button_center aboveSubview:_tabbarViewCenter];
     _tabbarViewCenter.userInteractionEnabled = YES;
     [_tabbarViewCenter addSubview:_button_center];
-
-   //button0
+    
+    //button0
     _button_0 = [UIButton buttonWithType:UIButtonTypeCustom];
     [_button_0 setTag:0];
     [_button_0 setImage:[UIImage imageNamed:@"tabbar_home.png"] forState:UIControlStateNormal];
     [_button_0 setImage:[UIImage imageNamed:@"tabbar_home_down.png"] forState:UIControlStateSelected];
     [_button_0 addTarget:self action:@selector(btn1Click:) forControlEvents:UIControlEventTouchUpInside];
-     [_tabbarView addSubview:_button_0];
+    [_tabbarView addSubview:_button_0];
     [_button_0 setSelected:YES];
     
     //button1
@@ -103,7 +103,7 @@
     [_button_4 setTag:4];
     [_button_4 setImage:[UIImage imageNamed:@"tabbar_more.png"] forState:UIControlStateNormal];
     [_button_4 setImage:[UIImage imageNamed:@"tabbar_more_down.png"] forState:UIControlStateSelected];
-        [_button_4 addTarget:self action:@selector(btn1Click:) forControlEvents:UIControlEventTouchUpInside];
+    [_button_4 addTarget:self action:@selector(btn1Click:) forControlEvents:UIControlEventTouchUpInside];
     [_tabbarView addSubview:_button_4];
     
     _arrayButton = [NSArray arrayWithObjects:_button_0,_button_1,_button_center,_button_3,_button_4,nil];
@@ -118,10 +118,10 @@
     
     [_tabbarViewCenter setFrame:CGRectMake(0, 0, 65, 57)];
     
-     _tabbarViewCenter.center = CGPointMake(self.center.x, self.bounds.size.height/2);
+    _tabbarViewCenter.center = CGPointMake(self.center.x, self.bounds.size.height/2);
     
     [_button_center setFrame:CGRectMake(0, 0, 65, 57)];
-      
+    
     [_button_0 setFrame:CGRectMake(10, 2, 45, 45)];
     
     [_button_1 setFrame:CGRectMake(67, 2, 45, 45)];
@@ -129,24 +129,35 @@
     [_button_3 setFrame:CGRectMake(202, 2, 45, 45)];
     
     [_button_4 setFrame:CGRectMake(264, 2, 45, 45)];
-       
+    
 }
 
 
 -(void)btn1Click:(id)sender
 {
-     UIButton *btn = (UIButton *)sender;
+    UIButton *btn = (UIButton *)sender;
     
     [self tapButtonIndex:btn.tag];
 }
 
+
+/*
+ false
+ */
+
+-(void)falseTapButtonIndex:(NSInteger)index withNSstringStartPage:(NSString*)startPage
+{
+    [self _buttonSelectedwithIndex:index];
+    [self.delegate falseTouchBtnAtIndex:index withNSstringStartPage:startPage];
+    
+}
 
 
 -(void)tapButtonIndex:(NSInteger)index
 {
     [self.delegate touchBtnAtIndex:index];
     [self _buttonSelectedwithIndex:index];
-
+    
 }
 
 
