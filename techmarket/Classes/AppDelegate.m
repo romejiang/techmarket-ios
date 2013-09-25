@@ -415,6 +415,10 @@
     {
         return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil];
     }
+    if ([urlStr hasPrefix:@"wx"] )
+    {
+        return  [WXApi handleOpenURL:url delegate:nil];
+    }
     else
     {
         return NO;
