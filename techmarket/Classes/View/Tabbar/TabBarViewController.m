@@ -83,6 +83,7 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     
     [UIApplication sharedApplication].statusBarHidden = NO;
@@ -139,8 +140,16 @@
     width = sizeDevice.width;
     
     height = sizeDevice.height;
-    
+
+
     CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    
+    NSLog(@"%@",[[UIDevice currentDevice] systemVersion]);
+    
+    if ([[[UIDevice currentDevice] systemVersion]integerValue] > = 7)
+    {
+        statusBarHeight = 0;
+    }
     
     _customView.frame = CGRectMake(0, 0, width, height);
     
