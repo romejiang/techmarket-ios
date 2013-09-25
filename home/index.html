@@ -217,15 +217,20 @@
             
             function getUserInfo()
             {
-                   cordova.exec(function(winParam) {
-                             
-                             alert(winParam)
+                var token='';
+                
+                cordova.exec(function(winParam) {
+                             token=winParam;
+                             alert("bbbb:"+token);
+        
                              },
                              function(error) {
                              },
                              "GetUserInfoPlugin",
-                             "getuserinfo",
-                             ["zhao"]);
+                             "getuserinfoWithParam",
+                             ["token"]);
+                
+                alert("aaaaa:"+token);
             
             }
             

@@ -12,7 +12,7 @@
 #import <ApplicationUnity/ASIHTTPRequest.h>
 #import  <ApplicationUnity/ActivityIndicatorView.h>
 
-
+#define Technology_Id                      @"715319098"
 #define CustomActivity_IndicatorViewFrame  CGRectMake(115, 170, 90, 75)
 
 #define KCDVUpdateVersion_TrackViewUrl      @"trackViewUrl"
@@ -58,7 +58,7 @@ UIAlertViewDelegate>
 
     NSInfo(@"检测版本开始");
     
-    NSString *itunesItemIdentifier = [command.arguments count] > 0?[command.arguments objectAtIndex:0]:  nil;
+    NSString *itunesItemIdentifier = [command.arguments count] > 0?[command.arguments objectAtIndex:0]:  Technology_Id;
     
     NSInfo(@"检测新版本传入参数Id = %@",itunesItemIdentifier);
     

@@ -197,6 +197,8 @@
 {
     [_userDefault setObject:paramLoginDictionary forKey:UserDefaultData];
     
+    [_userDefault synchronize];
+    
     NSLog(@"%@",[_userDefault objectForKey:UserDefaultData]);
 
 }
