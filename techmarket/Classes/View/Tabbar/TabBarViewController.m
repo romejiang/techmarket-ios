@@ -146,7 +146,7 @@
     
     NSLog(@"%@",[[UIDevice currentDevice] systemVersion]);
     
-    if ([[[UIDevice currentDevice] systemVersion]integerValue] > = 7)
+    if ([[[UIDevice currentDevice] systemVersion]integerValue] >= 7)
     {
         statusBarHeight = 0;
     }
