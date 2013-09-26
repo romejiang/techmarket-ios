@@ -80,6 +80,11 @@
     [super viewDidUnload];
 }
 
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
 /**************************************************************************************/
 
 #pragma mark -
