@@ -1371,6 +1371,7 @@
 					$BUILT_PRODUCTS_DIR/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
@@ -1414,6 +1415,7 @@
 					$BUILT_PRODUCTS_DIR/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
