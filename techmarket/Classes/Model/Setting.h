@@ -29,5 +29,9 @@
 
 #define LoadPage    @"loadPage"
 
+#define ShowMaskView    @"showMaskView"
+
+#define HideMaskView    @"hideMaskView"
+
 #endif
 

@@ -41,8 +41,11 @@
 
 @property (strong, nonatomic)WPLoginViewController *    loginView;
 @property (strong, nonatomic)WPRegistViewController*     regist;
-@property (strong, nonatomic)ActivityIndicatorView * activityIndicatorView;
 @property (unsafe_unretained, nonatomic)NSInteger            pageIndex;
+
+//蒙版
+@property (strong, nonatomic) UIControl*             overlayer;
+@property (strong, nonatomic) ActivityIndicatorView *viewActivityIndicatorView;
 
 //解决下移问题(存放CDv)
 @property (strong,nonatomic)UIView*      customView;
@@ -109,10 +112,32 @@
     for (CDVViewController * viewController in _arrayViewController)
     {
         [_customView insertSubview:viewController.view belowSubview:_tabBarView];
+       
         viewController.webView.dataDetectorTypes  = UIDataDetectorTypeNone;
-        
     }
     
+    //蒙版
+    _overlayer = [[UIControl alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    _overlayer.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:0.6];
+    
+    [_overlayer addTarget:self
+                       action:@selector(touch)
+             forControlEvents:UIControlEventTouchUpInside];
+    
+    // 在蒙版上添加Activity
+    _viewActivityIndicatorView = [[ActivityIndicatorView alloc]initWithFrame:CustomActivity_IndicatorViewFrame];
+   
+    [_viewActivityIndicatorView setLabelTextWithContent:@"正在清理缓存"];
+    
+//    [_viewActivityIndicatorView stopAnimation];
+    
+    [_overlayer addSubview:_viewActivityIndicatorView];
+      
+    [_customView addSubview:_overlayer];
+    
+    self.overlayer.hidden = YES;
+
     //监听登陆结果
     [self _addObserver];
     
@@ -403,6 +428,17 @@
                                             selector:@selector(_observerGoToPage:)
                                                 name:UIGoToPageNotification
                                               object:nil];
+    
+    //监听显示蒙版
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(_showMask:)
+                                                name:ShowMaskView
+                                              object:nil];
+    //监听隐藏蒙版
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(_hidenMaskView:)
+                                                name:HideMaskView
+                                              object:nil];
 }
 
 
@@ -431,6 +467,31 @@
                                                    name:UIGoToPageNotification
                                                  object:nil];
     
+    
+    //隐藏监听显示蒙版
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:ShowMaskView
+                                                 object:nil];
+   
+    //隐藏监听隐藏蒙版
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:HideMaskView
+                                                 object:nil];
+ }
+
+/**************************************************************************************/
+
+#pragma mark -
+#pragma mark touch
+#pragma mark -
+
+/**************************************************************************************/
+
+-(void)touch
+{
+
+
+
 }
 
 /**************************************************************************************/
@@ -500,6 +561,24 @@
     NSInteger intPage = [arrayPage indexOfObject:gotoPage];
     
     [_tabBarView falseTapButtonIndex:intPage withNSstringStartPage:urlResultStr];
+}
+
+-(void)_showMask:(NSNotification*)_notification
+{
+    _overlayer.hidden = NO;
+    
+    _viewActivityIndicatorView.hidden = NO;
+    
+    [_viewActivityIndicatorView startAnimation];
+}
+
+-(void)_hidenMaskView:(NSNotification*)_notification
+{
+    _overlayer.hidden = YES;
+    
+    _viewActivityIndicatorView.hidden = YES;
+    
+    [_viewActivityIndicatorView stopAnimation];
 }
 
 
